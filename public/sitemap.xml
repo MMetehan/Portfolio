@@ -4,52 +4,52 @@
   
   <!-- Homepage -->
   <url>
-    <loc>https://metehan-portfolio.vercel.app/</loc>
+    <loc>https://muhammed-metehan-yildirim.netlify.app/</loc>
     <lastmod>2025-09-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://metehan-portfolio.vercel.app/" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://metehan-portfolio.vercel.app/" />
+    <xhtml:link rel="alternate" hreflang="tr" href="https://muhammed-metehan-yildirim.netlify.app/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://muhammed-metehan-yildirim.netlify.app/" />
   </url>
   
   <!-- About Page -->
   <url>
-    <loc>https://metehan-portfolio.vercel.app/about</loc>
+    <loc>https://muhammed-metehan-yildirim.netlify.app/about</loc>
     <lastmod>2025-09-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://metehan-portfolio.vercel.app/about" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://metehan-portfolio.vercel.app/about" />
+    <xhtml:link rel="alternate" hreflang="tr" href="https://muhammed-metehan-yildirim.netlify.app/about" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://muhammed-metehan-yildirim.netlify.app/about" />
   </url>
   
   <!-- Skills Page -->
   <url>
-    <loc>https://metehan-portfolio.vercel.app/skills</loc>
+    <loc>https://muhammed-metehan-yildirim.netlify.app/skills</loc>
     <lastmod>2025-09-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://metehan-portfolio.vercel.app/skills" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://metehan-portfolio.vercel.app/skills" />
+    <xhtml:link rel="alternate" hreflang="tr" href="https://muhammed-metehan-yildirim.netlify.app/skills" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://muhammed-metehan-yildirim.netlify.app/skills" />
   </url>
   
   <!-- Projects Page -->
   <url>
-    <loc>https://metehan-portfolio.vercel.app/projects</loc>
+    <loc>https://muhammed-metehan-yildirim.netlify.app/projects</loc>
     <lastmod>2025-09-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://metehan-portfolio.vercel.app/projects" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://metehan-portfolio.vercel.app/projects" />
+    <xhtml:link rel="alternate" hreflang="tr" href="https://muhammed-metehan-yildirim.netlify.app/projects" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://muhammed-metehan-yildirim.netlify.app/projects" />
   </url>
   
   <!-- Contact Page -->
   <url>
-    <loc>https://metehan-portfolio.vercel.app/contact</loc>
+    <loc>https://muhammed-metehan-yildirim.netlify.app/contact</loc>
     <lastmod>2025-09-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://metehan-portfolio.vercel.app/contact" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://metehan-portfolio.vercel.app/contact" />
+    <xhtml:link rel="alternate" hreflang="tr" href="https://muhammed-metehan-yildirim.netlify.app/contact" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://muhammed-metehan-yildirim.netlify.app/contact" />
   </url>
   
 </urlset>

@@ -1,11 +1,11 @@
 # Robots.txt for Metehan Portfolio
-# https://metehan-portfolio.vercel.app
+# https://muhammed-metehan-yildirim.netlify.app
 
 User-agent: *
 Allow: /
 
 # Sitemaps
-Sitemap: https://metehan-portfolio.vercel.app/sitemap.xml
+Sitemap: https://muhammed-metehan-yildirim.netlify.app/sitemap.xml
 
 # Disallow crawling of assets that don't need indexing
 Disallow: /assets/

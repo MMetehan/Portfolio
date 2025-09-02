@@ -97,7 +97,7 @@ npm run build
 ```env
 # .env.local dosyası oluşturun (opsiyonel)
 VITE_GITHUB_USERNAME=MMetehan
-VITE_SITE_URL=https://metehan-portfolio.vercel.app
+VITE_SITE_URL=https://muhammed-metehan-yildirim.netlify.app
 ```
 
 ### SEO Ayarları
