@@ -109,6 +109,13 @@ const Home = () => {
                         className="flex flex-wrap gap-4 justify-center lg:justify-start mb-8"
                     >
                         <motion.button
+                            onClick={() => {
+                                // Handle download CV named muhammed-metehan-yildirim-TR.pdf
+                                const link = document.createElement('a');
+                                link.href = '/muhammed-metehan-yildirim-TR.pdf';
+                                link.download = 'muhammed-metehan-yildirim-TR.pdf';
+                                link.click();
+                            }}
                             whileHover={{ scale: 1.05, boxShadow: theme === 'dark' ? '0 0 25px rgba(0, 255, 255, 0.5)' : '0 10px 25px rgba(0, 0, 0, 0.2)' }}
                             whileTap={{ scale: 0.95 }}
                             className={`px-6 py-3 rounded-lg font-semibold flex items-center gap-2 transition-all duration-300 ${theme === 'dark'
