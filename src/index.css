@@ -1,0 +1,132 @@
+@import "tailwindcss";
+@tailwind utilities;
+
+/* Lightning Animations */
+@keyframes lightning-flash {
+
+  0%,
+  10%,
+  20%,
+  100% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+
+  5%,
+  15% {
+    opacity: 1;
+    transform: scale(1);
+    filter: drop-shadow(0 0 20px currentColor) drop-shadow(0 0 40px currentColor);
+  }
+}
+
+@keyframes lightning-bolt {
+  0% {
+    opacity: 0;
+    transform: translateY(-100px) scaleY(0);
+  }
+
+  10% {
+    opacity: 1;
+    transform: translateY(0) scaleY(1);
+    filter: drop-shadow(0 0 10px #00ffff) drop-shadow(0 0 20px #00ffff) drop-shadow(0 0 30px #00ffff);
+  }
+
+  20% {
+    opacity: 0;
+    transform: translateY(100px) scaleY(0);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateY(100px) scaleY(0);
+  }
+}
+
+@keyframes electric-pulse {
+
+  0%,
+  100% {
+    filter: drop-shadow(0 0 5px currentColor) drop-shadow(0 0 10px currentColor);
+  }
+
+  50% {
+    filter: drop-shadow(0 0 10px currentColor) drop-shadow(0 0 60px currentColor);
+  }
+}
+
+@keyframes lightning-text {
+
+  0%,
+  90%,
+  100% {
+    text-shadow:
+      0 0 5px currentColor,
+      0 0 10px currentColor,
+      0 0 15px currentColor;
+  }
+
+  5%,
+  10% {
+    text-shadow:
+      0 0 10px currentColor,
+      0 0 20px currentColor,
+      0 0 30px currentColor,
+      0 0 40px currentColor,
+      0 0 50px currentColor;
+  }
+}
+
+@keyframes spark-float {
+
+  0%,
+  100% {
+    transform: translateY(0px) rotate(0deg);
+    opacity: 0.7;
+  }
+
+  50% {
+    transform: translateY(-20px) rotate(180deg);
+    opacity: 1;
+  }
+}
+
+.lightning-flash {
+  animation: lightning-flash 3s infinite random;
+}
+
+.lightning-bolt {
+  animation: lightning-bolt 4s infinite;
+  animation-delay: var(--delay, 0s);
+}
+
+.electric-pulse {
+  animation: electric-pulse 2s ease-in-out infinite;
+}
+
+.lightning-text {
+  animation: lightning-text 4s infinite;
+}
+
+.spark-float {
+  animation: spark-float 2s ease-in-out infinite;
+  animation-delay: var(--delay, 0s);
+}
+
+
+
+@keyframes paddingTopPulse {
+
+  0%,
+  100% {
+    padding-top: 0px;
+  }
+
+  50% {
+    padding-top: 100px;
+  }
+}
+
+.animate-paddingTopPulse {
+  animation: paddingTopPulse 5s infinite ease-in-out;
+}

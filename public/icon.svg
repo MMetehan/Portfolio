@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256">
+  <defs>
+    <!-- Stronger Neon glow filter (purple/blue aura) -->
+    <filter id="neonGlow" x="-70%" y="-70%" width="240%" height="240%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="8" result="blur1"/>
+      <feColorMatrix in="blur1" type="matrix"
+        values="0 0 0 0 0.70
+                0 0 0 0 0.80
+                0 0 0 0 1.00
+                0 0 0 1 0" result="blueTint"/>
+      <feGaussianBlur in="SourceGraphic" stdDeviation="20" result="blur2"/>
+      <feColorMatrix in="blur2" type="matrix"
+        values="0 0 0 0 0.95
+                0 0 0 0 0.60
+                0 0 0 1 1.00
+                0 0 0 1 0" result="purpleTint"/>
+      <feMerge>
+        <feMergeNode in="blueTint"/>
+        <feMergeNode in="purpleTint"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Solid filled lightning bolt -->
+  <path d="M150 18 L96 132 L142 132 L112 238 L208 106 L160 106 L190 18 Z"
+        fill="#ffffff" filter="url(#neonGlow)"/>
+</svg>

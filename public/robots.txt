@@ -1,0 +1,22 @@
+# Robots.txt for Metehan Portfolio
+# https://metehan-portfolio.vercel.app
+
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://metehan-portfolio.vercel.app/sitemap.xml
+
+# Disallow crawling of assets that don't need indexing
+Disallow: /assets/
+Disallow: /*.js$
+Disallow: /*.css$
+Disallow: /*.json$
+
+# Allow important files
+Allow: /manifest.json
+Allow: /icon.svg
+Allow: /my.jpeg
+
+# Crawl delay (optional, for politeness)
+Crawl-delay: 1
