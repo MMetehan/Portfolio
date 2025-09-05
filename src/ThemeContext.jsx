@@ -15,18 +15,16 @@ export const ThemeProvider = ({ children }) => {
     const [language, setLanguage] = useState('tr');
 
     useEffect(() => {
-        const savedTheme = localStorage.getItem('theme') || 'dark';
+        // Theme always dark, only language from localStorage
         const savedLanguage = localStorage.getItem('language') || 'tr';
-        setTheme(savedTheme);
         setLanguage(savedLanguage);
+
+        // Ensure theme is always dark
+        setTheme('dark');
+        localStorage.setItem('theme', 'dark');
     }, []);
 
-    const toggleTheme = () => {
-        const newTheme = theme === 'dark' ? 'light' : 'dark';
-        setTheme(newTheme);
-        localStorage.setItem('theme', newTheme);
-    };
-
+    // Remove theme toggle functionality
     const toggleLanguage = () => {
         const newLanguage = language === 'tr' ? 'en' : 'tr';
         setLanguage(newLanguage);
@@ -34,10 +32,10 @@ export const ThemeProvider = ({ children }) => {
     };
 
     const value = {
-        theme,
+        theme, // Always 'dark'
         language,
-        toggleTheme,
         toggleLanguage,
+        // toggleTheme removed
     };
 
     return (
