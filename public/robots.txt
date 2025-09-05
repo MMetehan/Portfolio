@@ -7,20 +7,19 @@ Allow: /
 # Sitemaps
 Sitemap: https://www.metehan-yildirim.com/sitemap.xml
 
-# Disallow crawling of assets that don't need indexing
-Disallow: /assets/
-Disallow: /*.js$
-Disallow: /*.css$
-Disallow: /*.json$
-
-# Disallow crawling of error pages (they should not be indexed)
+# Disallow crawling of unnecessary files
+Disallow: /node_modules/
+Disallow: /build/static/css/*.map
+Disallow: /build/static/js/*.map
 Disallow: /404
 Disallow: /*404*
 
-# Allow important files
+# Allow important assets
+Allow: /static/media/
 Allow: /manifest.json
+Allow: /favicon.ico
 Allow: /icon.svg
 Allow: /my.jpeg
 
-# Crawl delay (optional, for politeness)
+# Crawl delay (optional)
 Crawl-delay: 1
