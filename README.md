@@ -13,6 +13,7 @@ Modern ve responsive portfolio websitesi. React.js, Framer Motion ve Tailwind CS
 - 🎭 **Framer Motion** - Smooth animasyonlar
 - 📊 **GitHub API** - Gerçek zamanlı proje listesi
 - 🎯 **SEO Optimized** - Arama motoru dostu
+- 🚫 **404 Error Page** - Kullanıcı dostu hata sayfası
 
 ## 🛠️ Teknolojiler
 
@@ -47,6 +48,7 @@ metehan-portfolio/
 │   ├── manifest.json        # PWA manifest
 │   ├── sitemap.xml          # Site haritası
 │   ├── robots.txt           # Crawler yönergeleri
+│   ├── _redirects           # Netlify redirects
 │   └── favicon.ico          # Favicon (eklenecek)
 ├── src/
 │   ├── components/
@@ -57,13 +59,15 @@ metehan-portfolio/
 │   │   ├── About.jsx               # Hakkımda
 │   │   ├── Skills.jsx              # Yetenekler
 │   │   ├── Projects.jsx            # Projeler
-│   │   └── Contact.jsx             # İletişim
+│   │   ├── Contact.jsx             # İletişim
+│   │   └── NotFound.jsx            # 404 Hata sayfası
 │   ├── App.jsx               # Ana uygulama
 │   ├── ThemeContext.jsx      # Tema yönetimi
 │   ├── LoadingScreen.jsx     # Yükleme ekranı
 │   └── main.jsx             # Entry point
 ├── index.html               # SEO optimized HTML
 ├── vite.config.js          # Vite konfigürasyonu
+├── vercel.json             # Vercel deployment config
 ├── tailwind.config.js      # Tailwind ayarları
 └── package.json            # Dependencies
 ```
@@ -97,7 +101,7 @@ npm run build
 ```env
 # .env.local dosyası oluşturun (opsiyonel)
 VITE_GITHUB_USERNAME=MMetehan
-VITE_SITE_URL=https://muhammed-metehan-yildirim.netlify.app
+VITE_SITE_URL=https://www.metehan-yildirim.com
 ```
 
 ### SEO Ayarları
@@ -170,7 +174,31 @@ VITE_SITE_URL=https://muhammed-metehan-yildirim.netlify.app
 - **Desktop** - 1024px+ geniş ekran desteği
 - **4K Ready** - Yüksek çözünürlük desteği
 
-## 🚀 Deployment
+## � 404 Error Handling
+
+### Özellikler
+- **SEO Optimized** - 404 sayfası noindex, nofollow
+- **User Friendly** - Kullanıcı dostu tasarım
+- **Navigation Links** - Diğer sayfalara yönlendirme
+- **Lightning Effects** - Tutarlı tema efektleri
+- **Multilingual** - TR/EN dil desteği
+
+### Teknik Detaylar
+```jsx
+// SEO meta tags dynamic update
+useEffect(() => {
+  document.title = '404 - Page Not Found';
+  // Robots meta update
+  robotsMeta.setAttribute('content', 'noindex, nofollow');
+}, []);
+```
+
+### Deployment Configuration
+- **Netlify**: `_redirects` dosyası ile SPA routing
+- **Vercel**: `vercel.json` ile rewrite rules
+- **Apache**: `.htaccess` gerekli (eklenebilir)
+
+## �🚀 Deployment
 
 ### Vercel (Önerilen)
 1. Vercel hesabı oluşturun

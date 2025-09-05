@@ -1,17 +1,21 @@
 # Robots.txt for Metehan Portfolio
-# https://muhammed-metehan-yildirim.netlify.app
+# https://www.metehan-yildirim.com
 
 User-agent: *
 Allow: /
 
 # Sitemaps
-Sitemap: https://muhammed-metehan-yildirim.netlify.app/sitemap.xml
+Sitemap: https://www.metehan-yildirim.com/sitemap.xml
 
 # Disallow crawling of assets that don't need indexing
 Disallow: /assets/
 Disallow: /*.js$
 Disallow: /*.css$
 Disallow: /*.json$
+
+# Disallow crawling of error pages (they should not be indexed)
+Disallow: /404
+Disallow: /*404*
 
 # Allow important files
 Allow: /manifest.json
