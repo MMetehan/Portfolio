@@ -170,6 +170,7 @@ const Navigation = () => {
 
               {/* Language Toggle */}
               <motion.button
+                aria-label="Toggle language"
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
                 onClick={toggleLanguage}
@@ -184,6 +185,7 @@ const Navigation = () => {
 
               {/* Mobile Menu Button */}
               <motion.button
+                aria-label="Toggle mobile menu"
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}

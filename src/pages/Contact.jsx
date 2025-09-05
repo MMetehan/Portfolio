@@ -273,6 +273,7 @@ const Contact = () => {
                                     <motion.a
                                         key={index}
                                         href={social.url}
+                                        aria-label={'Visit my ' + social.name + ' profile.'}
                                         target="_blank"
                                         rel="noopener noreferrer"
                                         initial={{ opacity: 0, scale: 0.5 }}

@@ -147,11 +147,12 @@ const Home = () => {
                         className="flex gap-4 justify-center lg:justify-start"
                     >
                         {[
-                            { icon: FaGithub, url: "https://github.com/MMetehan" },
-                            { icon: FaLinkedin, url: "https://www.linkedin.com/in/muhammed-metehan-y%C4%B1ld%C4%B1r%C4%B1m-17687b169/" },
-                            { icon: FaInstagram, url: "https://www.instagram.com/metehan__yildirim/" }
+                            { icon: FaGithub, url: "https://github.com/MMetehan", name: "GitHub" },
+                            { icon: FaLinkedin, url: "https://www.linkedin.com/in/muhammed-metehan-y%C4%B1ld%C4%B1r%C4%B1m-17687b169/", name: "LinkedIn" },
+                            { icon: FaInstagram, url: "https://www.instagram.com/metehan__yildirim/", name: "Instagram" }
                         ].map((item, index) => (
                             <motion.a
+                                aria-label={"Visit my " + item.name + " profile."}
                                 key={index}
                                 href={item.url}
                                 target='_blank'
