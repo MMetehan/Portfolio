@@ -130,3 +130,68 @@
 .animate-paddingTopPulse {
   animation: paddingTopPulse 5s infinite ease-in-out;
 }
+
+/* Code Highlighting Styles */
+.markdown-content pre {
+  position: relative;
+}
+
+.markdown-content pre:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(0, 255, 255, 0.5), transparent);
+}
+
+.markdown-content code[class*="language-"] {
+  font-family: 'Fira Code', 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* Custom syntax highlighting colors for dark theme */
+.hljs {
+  background: transparent !important;
+  color: #e6e6e6;
+}
+
+.hljs-keyword,
+.hljs-built_in,
+.hljs-type {
+  color: #ff6b6b;
+}
+
+.hljs-string,
+.hljs-attr {
+  color: #4ecdc4;
+}
+
+.hljs-number {
+  color: #ffa726;
+}
+
+.hljs-comment {
+  color: #666;
+  font-style: italic;
+}
+
+.hljs-function,
+.hljs-title {
+  color: #66d9ef;
+}
+
+.hljs-variable,
+.hljs-name {
+  color: #a6e22e;
+}
+
+.hljs-tag {
+  color: #f92672;
+}
+
+.hljs-punctuation {
+  color: #f8f8f2;
+}

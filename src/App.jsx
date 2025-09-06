@@ -13,6 +13,8 @@ import About from './pages/About';
 import Skills from './pages/Skills';
 import Projects from './pages/Projects';
 import Contact from './pages/Contact';
+import BlogList from './pages/BlogList';
+import BlogDetail from './pages/BlogDetail';
 import NotFound from './pages/NotFound';
 
 // Global Lightning Effects Component
@@ -96,6 +98,7 @@ const Navigation = () => {
     { path: '/about', label: language === 'tr' ? 'Hakkımda' : 'About' },
     { path: '/skills', label: language === 'tr' ? 'Yetenekler' : 'Skills' },
     { path: '/projects', label: language === 'tr' ? 'Projeler' : 'Projects' },
+    { path: '/blog', label: language === 'tr' ? 'Blog' : 'Blog' },
     { path: '/contact', label: language === 'tr' ? 'İletişim' : 'Contact' }
   ];
 
@@ -321,6 +324,8 @@ function AppContent() {
           <Route path="/about" element={<About />} />
           <Route path="/skills" element={<Skills />} />
           <Route path="/projects" element={<Projects />} />
+          <Route path="/blog" element={<BlogList />} />
+          <Route path="/blog/:slug" element={<BlogDetail />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
