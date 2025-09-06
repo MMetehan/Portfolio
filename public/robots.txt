@@ -1,5 +1,5 @@
 # Robots.txt for Metehan Portfolio
-# https://www.metehan-yildirim.com
+# https://metehan-yildirim.com
 
 User-agent: *
 Allow: /
@@ -13,7 +13,7 @@ Allow: /projects
 Allow: /contact
 
 # Sitemaps
-Sitemap: https://www.metehan-yildirim.com/sitemap.xml
+Sitemap: https://metehan-yildirim.com/sitemap.xml
 
 # Disallow crawling of unnecessary files
 Disallow: /node_modules/

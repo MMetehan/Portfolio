@@ -1,7 +1,11 @@
 # Netlify _redirects file for SPA routing
 # This ensures all routes are handled by React Router
 
-# Serve the app for all non-file requests
+# --- Domain redirect (force non-www) ---
+# Only redirect the root domain to avoid conflicts with SPA routing
+https://www.metehan-yildirim.com/  https://metehan-yildirim.com/  301!
+
+# Serve the app for all non-file requests (SPA routing)
 /*    /index.html   200
 
 # Optional: Redirect specific error pages
