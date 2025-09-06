@@ -6,10 +6,7 @@
 # https://www.metehan-yildirim.com  https://metehan-yildirim.com  301!
 # https://www.metehan-yildirim.com/*  https://metehan-yildirim.com/:splat  301!
 
-# Serve the app for all non-file requests (SPA routing)
 /*    /index.html   200
-
-# Optional: Redirect specific error pages
 /404   /index.html   200
 
 # Optional: Handle old URLs if you had any
