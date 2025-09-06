@@ -3,8 +3,8 @@
 
 # Alternative: Domain redirects (if DNS level redirect is not working)
 # Uncomment these lines if you need to handle www redirects here:
-# https://www.metehan-yildirim.com  https://metehan-yildirim.com  301!
-# https://www.metehan-yildirim.com/*  https://metehan-yildirim.com/:splat  301!
+https://www.metehan-yildirim.com  https://metehan-yildirim.com  301!
+https://www.metehan-yildirim.com/*  https://metehan-yildirim.com/:splat  301!
 
 # Serve the app for all non-file requests (SPA routing)
 /*    /index.html   200
