@@ -123,7 +123,7 @@ npm run build
 ```env
 # .env.local dosyası oluşturun (opsiyonel)
 VITE_GITHUB_USERNAME=MMetehan
-VITE_SITE_URL=https://www.metehan-yildirim.com
+VITE_SITE_URL=https://metehan-yildirim.com
 ```
 
 ### SEO Ayarları
