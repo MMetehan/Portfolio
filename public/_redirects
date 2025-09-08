@@ -7,7 +7,7 @@
 # https://www.metehan-yildirim.com/*  https://metehan-yildirim.com/:splat  301!
 
 /*    /index.html   200
-/404   /index.html   200
+# /404   /index.html   200
 
 # Optional: Handle old URLs if you had any
 # /old-path   /new-path   301
