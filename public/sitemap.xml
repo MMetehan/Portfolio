@@ -133,5 +133,15 @@
     <xhtml:link rel="alternate" hreflang="tr" href="https://metehan-yildirim.com/blog/web-security-tips" />
     <xhtml:link rel="alternate" hreflang="en" href="https://metehan-yildirim.com/blog/web-security-tips" />
   </url>
+  
+  <!-- A Curious Developer's Journey -->
+  <url>
+    <loc>https://metehan-yildirim.com/blog/a-curious-developers-journey</loc>
+    <lastmod>2024-12-16T00:00:00+03:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://metehan-yildirim.com/blog/a-curious-developers-journey" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://metehan-yildirim.com/blog/a-curious-developers-journey" />
+  </url>
 
 </urlset>
