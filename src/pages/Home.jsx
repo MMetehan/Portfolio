@@ -14,6 +14,7 @@ import {
   FaBookOpen,
   FaCalendarAlt,
   FaClock,
+  FaWikipediaW,
 } from "react-icons/fa";
 import { LightningBolt, FloatingSparks } from "../components/LightningEffects";
 import { useNavigate, Link } from "react-router-dom";
@@ -274,6 +275,11 @@ const Home = () => {
                     icon: FaInstagram,
                     url: "https://www.instagram.com/metehan__yildirim/",
                     name: "Instagram",
+                  },
+                  {
+                    icon: FaWikipediaW,
+                    url: "https://www.wikidata.org/wiki/Q136186660",
+                    name: "Wikidata",
                   },
                 ].map((item, index) => (
                   <motion.a
