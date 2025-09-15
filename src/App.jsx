@@ -106,12 +106,12 @@ const Navigation = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const navItems = [
-    { path: "/", label: language === "tr" ? "Ana Sayfa" : "Home" },
-    { path: "/about", label: language === "tr" ? "Hakkımda" : "About" },
-    { path: "/skills", label: language === "tr" ? "Yetenekler" : "Skills" },
-    { path: "/projects", label: language === "tr" ? "Projeler" : "Projects" },
-    { path: "/blog", label: language === "tr" ? "Blog" : "Blog" },
-    { path: "/contact", label: language === "tr" ? "İletişim" : "Contact" },
+    { path: "/", label: "Home" },
+    { path: "/about", label: "About" },
+    { path: "/skills", label: "Skills" },
+    { path: "/projects", label: "Projects" },
+    { path: "/blog", label: "Blog" },
+    { path: "/contact", label: "Contact" },
   ];
 
   const handleNavClick = (path) => {
@@ -149,7 +149,7 @@ const Navigation = () => {
               }`}
             >
               <span className="flex items-center gap-2">
-                <FaBolt className="text-yellow-400 lightning-flash" />
+                <FaBolt className="text-yellow-400 electric-pulse" />
                 Metehan
               </span>
             </motion.div>
@@ -190,7 +190,7 @@ const Navigation = () => {
             </div>
             <div className="flex items-center space-x-4">
               {/* Language Toggle */}
-              <motion.button
+              {/* <motion.button
                 aria-label="Toggle language"
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
@@ -202,7 +202,7 @@ const Navigation = () => {
                 }`}
               >
                 {language === "tr" ? "TR" : "EN"}
-              </motion.button>
+              </motion.button> */}
 
               {/* Mobile Menu Button */}
               <motion.button

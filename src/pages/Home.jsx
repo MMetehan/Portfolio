@@ -29,38 +29,20 @@ const Home = () => {
     getFeaturedPosts(language).slice(0, 2)
   );
 
-  const content = {
-    tr: {
-      greeting: "Merhaba, Ben:",
-      name: "Muhammed Metehan Yıldırım",
-      title: "Front-End Developer",
-      description:
-        "Profesyonel yazılım hayatıma 2018'de adım attım ama aslında hikâye çok daha öncesine, çocukluk meraklarıma dayanıyor. Yıllar içinde özellikle otel sektörüne yönelik etkileşimli mobil uygulamalar geliştirme konusunda uzmanlaştım. HTML5, JavaScript ve Ionic teknolojileriyle kullanıcı dostu arayüzler tasarlıyor, React.js ile modern ve kolay kullanışlı web panelleri üretiyorum. Güçlü problem çözme becerilerimle sadece teknik engelleri aşmakla kalmıyor, projelere 'bir tık daha havalı' dokunuşlar katmayı da seviyorum. Kullanıcı etkileşimini artırmak, işleri işlevsel olduğu kadar keyifli hale getirmek benim için öncelik. sonuçta kimse sıkıcı bir uygulama kullanmak istemez, değil mi? 🚀",
-      downloadCV: "CV İndir",
-      viewProjects: "Projeleri Gör",
-      contact: "İletişim",
-      latestFromBlog: "Blog'dan Son Yazılar",
-      viewAllPosts: "Tüm Yazıları Gör",
-      readMore: "Devamını Oku",
-      readTime: "dakika okuma",
-    },
-    en: {
-      greeting: "Hello, I'm: ",
-      name: "Muhammed Metehan Yıldırım",
-      title: "Front-End Developer",
-      description:
-        "I started my professional software journey in 2018, but the story goes much further back, all the way to my childhood curiosity. Over the years, I have specialized in developing interactive mobile applications, particularly for the hotel industry, designing user-friendly interfaces with HTML5, JavaScript, and Ionic, and building modern, easy-to-use web panels with React.js. Thanks to my strong problem-solving skills, I not only overcome technical challenges but also enjoy adding a 'slightly cooler' touch to projects. Enhancing user engagement and making applications both functional and enjoyable is a priority for me—after all, no one wants to use a boring app, right? 🚀",
-      downloadCV: "Download CV",
-      viewProjects: "View Projects",
-      contact: "Contact",
-      latestFromBlog: "Latest from Blog",
-      viewAllPosts: "View All Posts",
-      readMore: "Read More",
-      readTime: "min read",
-    },
+  const text = {
+    greeting: "Hello, I'm: ",
+    name: "Muhammed Metehan Yıldırım",
+    title: "Front-End Developer",
+    description:
+      "I started my professional software journey in 2018, but the story goes much further back, all the way to my childhood curiosity. Over the years, I have specialized in developing interactive mobile applications, particularly for the hotel industry, designing user-friendly interfaces with HTML5, JavaScript, and Ionic, and building modern, easy-to-use web panels with React.js. Thanks to my strong problem-solving skills, I not only overcome technical challenges but also enjoy adding a 'slightly cooler' touch to projects. Enhancing user engagement and making applications both functional and enjoyable is a priority for me—after all, no one wants to use a boring app, right? 🚀",
+    downloadCV: "Download CV",
+    viewProjects: "View Projects",
+    contact: "Contact",
+    latestFromBlog: "Latest from Blog",
+    viewAllPosts: "View All Posts",
+    readMore: "Read More",
+    readTime: "min read",
   };
-
-  const text = content[language];
 
   useEffect(() => {
     setFirstLanding(false);
@@ -89,41 +71,23 @@ const Home = () => {
   return (
     <>
       <Helmet>
-        <title>
-          {language === "tr"
-            ? "Muhammed Metehan Yıldırım - Yazılım Geliştirici & Mobil Uygulama Uzmanı"
-            : "Muhammed Metehan Yıldırım - Software Developer & Mobile App Specialist"}
-        </title>
+        <title>Muhammed Metehan Yıldırım - Frontend Developer</title>
         <meta
           name="description"
-          content={
-            language === "tr"
-              ? "React, React Native, Node.js ve modern web teknolojileri konusunda uzman yazılım geliştirici. Mobil uygulamalar ve web çözümleri geliştiriyorum."
-              : "Expert software developer specializing in React, React Native, Node.js, and modern web technologies. Building mobile applications and web solutions."
-          }
+          content="Expert software developer specializing in React, React Native, Node.js, and modern web technologies. Building mobile applications and web solutions."
         />
         <meta
           name="keywords"
-          content={
-            language === "tr"
-              ? "React, React Native, Node.js, Javascript, Typescript, Mobil Uygulama, Web Geliştirme, Yazılım Geliştirici, Frontend, Backend"
-              : "React, React Native, Node.js, Javascript, Typescript, Mobile App, Web Development, Software Developer, Frontend, Backend"
-          }
+          content="React, React Native, Node.js, Javascript, Typescript, Mobil Uygulama, Web Geliştirme, Yazılım Geliştirici, Frontend, Backend, Web Development, Software Developer"
         />
         <meta
           property="og:title"
-          content={
-            language === "tr"
-              ? "Muhammed Metehan Yıldırım - Yazılım Geliştirici"
-              : "Muhammed Metehan Yıldırım - Software Developer"
-          }
+          content={"Muhammed Metehan Yıldırım - Frontend Developer"}
         />
         <meta
           property="og:description"
           content={
-            language === "tr"
-              ? "Modern web ve mobil teknolojiler konusunda uzman yazılım geliştirici"
-              : "Expert software developer in modern web and mobile technologies"
+            "Expert software developer in modern web and mobile technologies"
           }
         />
         <meta property="og:type" content="website" />

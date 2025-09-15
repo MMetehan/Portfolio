@@ -7,20 +7,16 @@ import {
   FaReact,
   FaNodeJs,
   FaDatabase,
-  FaMobile,
   FaCode,
   FaGitAlt,
   FaDocker,
-  FaAws,
   FaBolt,
 } from "react-icons/fa";
 import {
   SiTypescript,
   SiTailwindcss,
-  SiMongodb,
   SiPostgresql,
   SiExpress,
-  SiNextdotjs,
   SiSass,
   SiIonic,
   SiAdobephotoshop,
@@ -35,30 +31,16 @@ const Skills = () => {
   const location = useLocation();
   const [firstLanding, setFirstLanding] = React.useState(true);
 
-  const content = {
-    tr: {
-      title: "Yeteneklerim",
-      subtitle: "Teknoloji yığınım ve uzmanlık alanlarım",
-      frontend: "Frontend",
-      backend: "Backend",
-      database: "Veritabanı",
-      tools: "Araçlar & Diğer",
-      experience: "Deneyim Seviyesi",
-      adobe: "Adobe Programları",
-    },
-    en: {
-      title: "My Skills",
-      subtitle: "My technology stack and areas of expertise",
-      frontend: "Frontend",
-      backend: "Backend",
-      database: "Database",
-      tools: "Tools & Others",
-      experience: "Experience Level",
-      adobe: "Adobe Programs",
-    },
+  const text = {
+    title: "My Skills",
+    subtitle: "My technology stack and areas of expertise",
+    frontend: "Frontend",
+    backend: "Backend",
+    database: "Database",
+    tools: "Tools & Others",
+    experience: "Experience Level",
+    adobe: "Adobe Programs",
   };
-
-  const text = content[language];
 
   const skillCategories = [
     {
@@ -145,42 +127,22 @@ const Skills = () => {
   return (
     <>
       <Helmet>
-        <title>
-          {language === "tr"
-            ? "Yeteneklerim - Muhammed Metehan Yıldırım"
-            : "My Skills - Muhammed Metehan Yıldırım"}
-        </title>
+        <title>My Skills - Muhammed Metehan Yıldırım</title>
         <meta
           name="description"
-          content={
-            language === "tr"
-              ? "React, React Native, Node.js, TypeScript ve diğer modern teknolojilerdeki yeteneklerim ve deneyimlerim."
-              : "My skills and experience in React, React Native, Node.js, TypeScript and other modern technologies."
-          }
+          content="My skills and experience in React, React Native, Node.js, TypeScript and other modern technologies."
         />
         <meta
           name="keywords"
-          content={
-            language === "tr"
-              ? "Yetenekler, React, React Native, Node.js, TypeScript, JavaScript, Python, MongoDB, PostgreSQL, AWS"
-              : "Skills, React, React Native, Node.js, TypeScript, JavaScript, Python, MongoDB, PostgreSQL, AWS"
-          }
+          content="Yetenekler, React, React Native, Node.js, TypeScript, JavaScript, Python, MongoDB, PostgreSQL, AWS, Skills"
         />
         <meta
           property="og:title"
-          content={
-            language === "tr"
-              ? "Yeteneklerim - Muhammed Metehan Yıldırım"
-              : "My Skills - Muhammed Metehan Yıldırım"
-          }
+          content="My Skills - Muhammed Metehan Yıldırım"
         />
         <meta
           property="og:description"
-          content={
-            language === "tr"
-              ? "Modern teknolojilerdeki yeteneklerim ve deneyimlerim"
-              : "My skills and experience in modern technologies"
-          }
+          content="My skills and experience in modern technologies/"
         />
         <meta
           property="og:url"
@@ -340,14 +302,11 @@ const Skills = () => {
               {[
                 {
                   years: "8+",
-                  label: language === "tr" ? "Yıl Deneyim" : "Years Experience",
+                  label: "Years Experience",
                 },
                 {
                   years: "30+",
-                  label:
-                    language === "tr"
-                      ? "Tamamlanan Proje"
-                      : "Completed Projects",
+                  label: "Completed Projects",
                 },
               ].map((stat, index) => (
                 <motion.div

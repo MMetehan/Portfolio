@@ -42,36 +42,20 @@ const Projects = () => {
   const [error, setError] = useState(null);
   const [firstLanding, setFirstLanding] = React.useState(true);
 
-  const content = {
-    tr: {
-      title: "Projelerim",
-      subtitle: "GitHub'dan alınan projeler ve çalışmalar",
-      viewCode: "Kodu Görüntüle",
-      liveDemo: "Canlı Demo",
-      technologies: "Kullanılan Teknolojiler",
-      loading: "Projeler yükleniyor...",
-      error: "Projeler yüklenirken bir hata oluştu",
-      noProjects: "Henüz proje bulunamadı",
-      stars: "Yıldız",
-      forks: "Fork",
-      updated: "Güncelleme",
-    },
-    en: {
-      title: "My Projects",
-      subtitle: "Projects and works fetched from GitHub",
-      viewCode: "View Code",
-      liveDemo: "Live Demo",
-      technologies: "Technologies Used",
-      loading: "Loading projects...",
-      error: "Error occurred while loading projects",
-      noProjects: "No projects found yet",
-      stars: "Stars",
-      forks: "Forks",
-      updated: "Updated",
-    },
+  const text = {
+    title: "My Projects",
+    subtitle: "Projects and works fetched from GitHub",
+    viewCode: "View Code",
+    liveDemo: "Live Demo",
+    technologies: "Technologies Used",
+    loading: "Loading projects...",
+    error: "Error occurred while loading projects",
+    noProjects: "No projects found yet",
+    stars: "Stars",
+    forks: "Forks",
+    updated: "Updated",
   };
 
-  const text = content[language];
   const getTechnologyIcon = (language) => {
     const icons = {
       JavaScript: { icon: SiJavascript, color: "#F7DF1E" },
@@ -157,42 +141,22 @@ const Projects = () => {
   return (
     <>
       <Helmet>
-        <title>
-          {language === "tr"
-            ? "Projelerim - Muhammed Metehan Yıldırım"
-            : "My Projects - Muhammed Metehan Yıldırım"}
-        </title>
+        <title>My Projects - Muhammed Metehan Yıldırım</title>
         <meta
           name="description"
-          content={
-            language === "tr"
-              ? "React, React Native, Node.js ve diğer teknolojilerle geliştirdiğim projeler ve açık kaynak katkılarım."
-              : "My projects developed with React, React Native, Node.js and other technologies, including open source contributions."
-          }
+          content="My projects developed with React, React Native, Node.js and other technologies, including open source contributions."
         />
         <meta
           name="keywords"
-          content={
-            language === "tr"
-              ? "Projeler, Portfolio, React Projeleri, React Native Uygulamalar, Node.js, Açık Kaynak"
-              : "Projects, Portfolio, React Projects, React Native Apps, Node.js, Open Source"
-          }
+          content="Projeler, Portfolio, React Projeleri, React Native Uygulamalar, Node.js, Açık Kaynak, Projects, React Projects, React Native Apps, Open Source"
         />
         <meta
           property="og:title"
-          content={
-            language === "tr"
-              ? "Projelerim - Muhammed Metehan Yıldırım"
-              : "My Projects - Muhammed Metehan Yıldırım"
-          }
+          content="My Projects - Muhammed Metehan Yıldırım"
         />
         <meta
           property="og:description"
-          content={
-            language === "tr"
-              ? "Geliştirdiğim projeler ve açık kaynak katkılarım"
-              : "My projects and open source contributions"
-          }
+          content="My projects and open source contributions"
         />
         <meta
           property="og:url"
@@ -318,9 +282,7 @@ const Projects = () => {
                       theme === "dark" ? "text-white" : "text-gray-800"
                     }`}
                   >
-                    {language === "tr"
-                      ? "Öne Çıkan Projeler"
-                      : "Featured Projects"}
+                    Featured Projects
                   </h2>
 
                   <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">

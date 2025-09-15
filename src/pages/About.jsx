@@ -16,50 +16,26 @@ const About = () => {
   const { theme, language } = useTheme();
   const location = useLocation();
   const [firstLanding, setFirstLanding] = React.useState(true);
-  const content = {
-    tr: {
-      title: "Hakkımda",
-      subtitle: "Kim olduğumu öğrenin",
-      intro:
-        "Merhaba! Ben Muhammed Metehan Yıldırım. Kod yazmak benim için sadece bir iş değil, aynı zamanda bir tutku. 2018’den beri profesyonel olarak yazılım geliştiriyorum ve her gün yeni teknolojilerle kendimi geliştirmeye devam ediyorum.",
-      story:
-        "Web geliştirme yolculuğum, kullanıcıların gerçekten işine yarayan ve keyif aldığı çözümler yaratma isteğimle şekillendi. HTML5, JavaScript ve Ionic ile mobil uygulamalar tasarlıyor; React.js ile modern, işlevsel web panelleri oluşturuyorum. Problem çözmek ve projelere ufak ama etkili dokunuşlar katmak benim işimi eğlenceli hâle getiriyor. 🚀",
-      passion: "Teknolojiye olan tutkum",
-      passionDesc:
-        "Yeni teknoloji = yeni bir oyun alanı. Her bir yeni teknolojide ilk günlerdeki heyecanımı tekrar buluyorum. Hadi itiraf edelim, biraz da nerd eğlencesi bu. 😎",
-      education: "Eğitim",
-      educationDesc:
-        "Üniversite okuyamadım ama bu beni durdurmadı. Öğrenmeye ve gelişmeye devam ettim, hâlâ da devam ediyorum. Çünkü bilgi güçtür, kahve ise enerji! ☕",
-      hobbies: "Hobiler",
-      hobbiesDesc:
-        "Boş zamanlarımda oyun oynamayı, kamp yapmayı ve yemek yapmayı ÇOK seviyorum. Özellikle yemek yaparken kod yazarkenki sabrımı kullanıyorum, evet kod gibi tarifler de var! 🍳",
-      values: "Değerlerim",
-      valuesDesc:
-        "Kaliteli kod, takım çalışması ve sürekli gelişim temel değerlerim. Ayrıca kahveyi asla unutamam. ☕",
-    },
-    en: {
-      title: "About Me",
-      subtitle: "Get to know who I am",
-      intro:
-        "Hi! I'm Muhammed Metehan Yıldırım. Coding is not just my job—it’s my passion. I’ve been working professionally in software development since 2018 and keep improving myself with new technologies every day.",
-      story:
-        "My web development journey is driven by a desire to create solutions that users actually enjoy and find useful. I design mobile apps with HTML5, JavaScript, and Ionic, and build modern, functional web panels using React.js. Solving problems and adding small but impactful touches makes my work fun. 🚀",
-      passion: "My passion for technology",
-      passionDesc:
-        "New technology = a new playground. I get that first-day excitement every time I dive into something new. Nerd fun included. 😎",
-      education: "Education",
-      educationDesc:
-        "I didn’t attend university, but that didn’t stop me. I’ve kept learning and improving—and still am. Knowledge is power, coffee is fuel! ☕",
-      hobbies: "Hobbies",
-      hobbiesDesc:
-        "In my free time, I love gaming, camping, and cooking. Especially cooking—sometimes I treat recipes like code and debug them! 🍳",
-      values: "My Values",
-      valuesDesc:
-        "Quality code, teamwork, and continuous development are my core values. Also, I can never forget coffee. ☕",
-    },
+  const text = {
+    title: "About Me",
+    subtitle: "Get to know who I am",
+    intro:
+      "Hi! I'm Muhammed Metehan Yıldırım. Coding is not just my job it’s my passion. I’ve been working professionally in software development since 2018 and keep improving myself with new technologies every day.",
+    story:
+      "My web development journey is driven by a desire to create solutions that users actually enjoy and find useful. I design mobile apps with HTML5, JavaScript, and Ionic, and build modern, functional web panels using React.js. Solving problems and adding small but impactful touches makes my work fun. 🚀",
+    passion: "My passion for technology",
+    passionDesc:
+      "New technology = a new playground. I get that first-day excitement every time I dive into something new. Nerd fun included. 😎",
+    education: "Education",
+    educationDesc:
+      "I didn’t attend university, but that didn’t stop me. I’ve kept learning and improving and still am. Knowledge is power, coffee is fuel! ☕",
+    hobbies: "Hobbies",
+    hobbiesDesc:
+      "In my free time, I love gaming, camping, and cooking. Especially cooking sometimes I treat recipes like code and debug them! 🍳",
+    values: "My Values",
+    valuesDesc:
+      "Quality code, teamwork, and continuous development are my core values. Also, I can never forget coffee. ☕",
   };
-
-  const text = content[language];
 
   const features = [
     {
@@ -112,42 +88,24 @@ const About = () => {
   return (
     <>
       <Helmet>
-        <title>
-          {language === "tr"
-            ? "Hakkımda - Muhammed Metehan Yıldırım"
-            : "About Me - Muhammed Metehan Yıldırım"}
-        </title>
+        <title>{"About Me - Muhammed Metehan Yıldırım"}</title>
         <meta
           name="description"
-          content={
-            language === "tr"
-              ? "Yazılım geliştirme tutkusu ile dolu bir geliştirici. Modern teknolojiler ve yenilikçi çözümler konusunda uzman."
-              : "A passionate software developer with expertise in modern technologies and innovative solutions."
-          }
+          content="A passionate software developer with expertise in modern technologies and innovative solutions."
         />
         <meta
           name="keywords"
           content={
-            language === "tr"
-              ? "Hakkımda, Yazılım Geliştirici, Kişisel Hikaye, Teknoloji Tutkusu, Problem Çözme"
-              : "About Me, Software Developer, Personal Story, Technology Passion, Problem Solving"
+            "Hakkımda, Yazılım Geliştirici, Kişisel Hikaye, Teknoloji Tutkusu, Problem Çözme, About Me, Software Developer, Personal Story, Technology Passion, Problem Solving"
           }
         />
         <meta
           property="og:title"
-          content={
-            language === "tr"
-              ? "Hakkımda - Muhammed Metehan Yıldırım"
-              : "About Me - Muhammed Metehan Yıldırım"
-          }
+          content="About Me - Muhammed Metehan Yıldırım"
         />
         <meta
           property="og:description"
-          content={
-            language === "tr"
-              ? "Yazılım geliştirme tutkusu ile dolu bir geliştirici"
-              : "A passionate software developer with expertise in modern technologies"
-          }
+          content="A passionate software developer with expertise in modern technologies"
         />
         <meta
           property="og:url"

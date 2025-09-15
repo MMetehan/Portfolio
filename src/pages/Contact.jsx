@@ -75,42 +75,22 @@ const Contact = () => {
     message: "",
   });
 
-  const content = {
-    tr: {
-      title: "İletişim",
-      subtitle: "Benimle iletişime geçin",
-      getInTouch: "İletişime Geçin",
-      description:
-        "Bir proje hakkında konuşmak veya sadece merhaba demek isterseniz, mesaj göndermekten çekinmeyin!",
-      name: "Ad Soyad",
-      email: "E-posta",
-      subject: "Konu",
-      message: "Mesaj",
-      send: "Mesaj Gönder",
-      contactInfo: "İletişim Bilgileri",
-      phone: "Telefon",
-      address: "Adres",
-      followMe: "Beni Takip Edin",
-    },
-    en: {
-      title: "Contact",
-      subtitle: "Get in touch with me",
-      getInTouch: "Get In Touch",
-      description:
-        "Whether you want to discuss a project or just say hello, don't hesitate to send a message!",
-      name: "Full Name",
-      email: "Email",
-      subject: "Subject",
-      message: "Message",
-      send: "Send Message",
-      contactInfo: "Contact Information",
-      phone: "Phone",
-      address: "Address",
-      followMe: "Follow Me",
-    },
+  const text = {
+    title: "Contact",
+    subtitle: "Get in touch with me",
+    getInTouch: "Get In Touch",
+    description:
+      "Whether you want to discuss a project or just say hello, don't hesitate to send a message!",
+    name: "Full Name",
+    email: "Email",
+    subject: "Subject",
+    message: "Message",
+    send: "Send Message",
+    contactInfo: "Contact Information",
+    phone: "Phone",
+    address: "Address",
+    followMe: "Follow Me",
   };
-
-  const text = content[language];
 
   const handleInputChange = (e) => {
     setFormData({
@@ -172,42 +152,22 @@ const Contact = () => {
   return (
     <>
       <Helmet>
-        <title>
-          {language === "tr"
-            ? "İletişim - Muhammed Metehan Yıldırım"
-            : "Contact - Muhammed Metehan Yıldırım"}
-        </title>
+        <title>Contact - Muhammed Metehan Yıldırım</title>
         <meta
           name="description"
-          content={
-            language === "tr"
-              ? "Benimle iletişime geçin. Projeleriniz için işbirliği yapalım ve yenilikçi çözümler geliştirelim."
-              : "Get in touch with me. Let's collaborate on your projects and develop innovative solutions."
-          }
+          content="Get in touch with me. Let's collaborate on your projects and develop innovative solutions."
         />
         <meta
           name="keywords"
-          content={
-            language === "tr"
-              ? "İletişim, Proje İşbirliği, Freelance, Yazılım Danışmanlığı, İş Fırsatları"
-              : "Contact, Project Collaboration, Freelance, Software Consulting, Job Opportunities"
-          }
+          content="Contact, İletişim, Proje İşbirliği, Yazılım Danışmanlığı, İş Fırsatları, Project Collaboration, Freelance, Software Consulting, Job Opportunities"
         />
         <meta
           property="og:title"
-          content={
-            language === "tr"
-              ? "İletişim - Muhammed Metehan Yıldırım"
-              : "Contact - Muhammed Metehan Yıldırım"
-          }
+          content="Contact - Muhammed Metehan Yıldırım"
         />
         <meta
           property="og:description"
-          content={
-            language === "tr"
-              ? "Benimle iletişime geçin ve projeleriniz için işbirliği yapalım"
-              : "Get in touch with me and let's collaborate on your projects"
-          }
+          content="Get in touch with me and let's collaborate on your projects"
         />
         <meta
           property="og:url"

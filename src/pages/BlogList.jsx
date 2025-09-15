@@ -30,18 +30,13 @@ const BlogList = () => {
 
   // SEO Meta tags
   useEffect(() => {
-    document.title =
-      language === "tr"
-        ? "Blog | Metehan Yıldırım - Frontend Developer Blog Yazıları"
-        : "Blog | Metehan Yıldırım - Frontend Developer Blog Posts";
+    document.title = "Blog | Metehan Yıldırım - Frontend Developer Blog Posts";
 
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
       metaDescription.setAttribute(
         "content",
-        language === "tr"
-          ? "Frontend development, React, Ionic, JavaScript ve web teknolojileri hakkında blog yazıları. Metehan Yıldırım'ın deneyimlerini ve ipuçlarını keşfedin."
-          : "Blog posts about frontend development, React, Ionic, JavaScript and web technologies. Discover Metehan Yıldırım's experiences and tips."
+        "Frontend development, React, Ionic, JavaScript ve web teknolojileri hakkında blog yazıları. Metehan Yıldırım'ın deneyimlerini ve ipuçlarını keşfedin., Blog posts about frontend development, React, Ionic, JavaScript and web technologies. Discover Metehan Yıldırım's experiences and tips."
       );
     }
 
@@ -50,9 +45,7 @@ const BlogList = () => {
     if (keywordsMeta) {
       keywordsMeta.setAttribute(
         "content",
-        language === "tr"
-          ? "blog, frontend development, React, Ionic, JavaScript, web development, programming, teknoloji"
-          : "blog, frontend development, React, Ionic, JavaScript, web development, programming, technology"
+        "blog, frontend development, React, Ionic, JavaScript, web development, programming, technology, teknoloji"
       );
     }
   }, [language]);
@@ -71,16 +64,15 @@ const BlogList = () => {
 
     if (selectedCategory !== "all") {
       filtered = filtered.filter((post) => {
-        const category = language === "tr" ? post.categoryTr : post.category;
+        const category = post.category;
         return category.toLowerCase() === selectedCategory.toLowerCase();
       });
     }
 
     if (searchTerm) {
       filtered = filtered.filter((post) => {
-        const title = language === "tr" ? post.titleTr : post.title;
-        const description =
-          language === "tr" ? post.descriptionTr : post.description;
+        const title = post.title;
+        const description = post.description;
         const searchText = `${title} ${description}`.toLowerCase();
         return searchText.includes(searchTerm.toLowerCase());
       });
@@ -89,60 +81,37 @@ const BlogList = () => {
     setFilteredPosts(filtered);
   }, [selectedCategory, searchTerm, language]);
 
-  const content = {
-    tr: {
-      title: "Blog",
-      subtitle: "Frontend geliştirme deneyimlerim ve ipuçları",
-      searchPlaceholder: "Blog yazılarında ara...",
-      allCategories: "Tüm Kategoriler",
-      featuredPosts: "Öne Çıkan Yazılar",
-      latestPosts: "Son Yazılar",
-      readMore: "Devamını Oku",
-      readTime: "dakika okuma",
-      noResults: "Arama kriterlerinize uygun blog yazısı bulunamadı.",
-      publishedOn: "Yayınlanma:",
-      by: "Yazar:",
-    },
-    en: {
-      title: "Blog",
-      subtitle: "My frontend development experiences and tips",
-      searchPlaceholder: "Search in blog posts...",
-      allCategories: "All Categories",
-      featuredPosts: "Featured Posts",
-      latestPosts: "Latest Posts",
-      readMore: "Read More",
-      readTime: "min read",
-      noResults: "No blog posts found matching your search criteria.",
-      publishedOn: "Published:",
-      by: "By:",
-    },
+  const text = {
+    title: "Blog",
+    subtitle: "My frontend development experiences and tips",
+    searchPlaceholder: "Search in blog posts...",
+    allCategories: "All Categories",
+    featuredPosts: "Featured Posts",
+    latestPosts: "Latest Posts",
+    readMore: "Read More",
+    readTime: "min read",
+    noResults: "No blog posts found matching your search criteria.",
+    publishedOn: "Published:",
+    by: "By:",
   };
 
-  const text = content[language];
   const categories = getAllCategories(language);
 
   const formatDate = (dateString) => {
     const date = new Date(dateString);
-    return language === "tr"
-      ? date.toLocaleDateString("tr-TR", {
-          year: "numeric",
-          month: "long",
-          day: "numeric",
-        })
-      : date.toLocaleDateString("en-US", {
-          year: "numeric",
-          month: "long",
-          day: "numeric",
-        });
+    return date.toLocaleDateString("en-US", {
+      year: "numeric",
+      month: "long",
+      day: "numeric",
+    });
   };
 
   const BlogCard = ({ post, featured = false }) => {
-    const title = language === "tr" ? post.titleTr : post.title;
-    const description =
-      language === "tr" ? post.descriptionTr : post.description;
-    const excerpt = language === "tr" ? post.excerptTr : post.excerpt;
-    const category = language === "tr" ? post.categoryTr : post.category;
-    const tags = language === "tr" ? post.tagsTr : post.tags;
+    const title = post.title;
+    const description = post.description;
+    const excerpt = post.excerpt;
+    const category = post.category;
+    const tags = post.tags;
 
     return (
       <motion.article
@@ -256,42 +225,22 @@ const BlogList = () => {
   return (
     <>
       <Helmet>
-        <title>
-          {language === "tr"
-            ? "Blog Yazılarım - Muhammed Metehan Yıldırım"
-            : "My Blog Posts - Muhammed Metehan Yıldırım"}
-        </title>
+        <title>My Blog Posts - Muhammed Metehan Yıldırım</title>
         <meta
           name="description"
-          content={
-            language === "tr"
-              ? "Yazılım geliştirme, React, React Native, Node.js ve modern teknolojiler hakkında blog yazılarım."
-              : "My blog posts about software development, React, React Native, Node.js and modern technologies."
-          }
+          content="My blog posts about software development, React, React Native, Node.js and modern technologies."
         />
         <meta
           name="keywords"
-          content={
-            language === "tr"
-              ? "Blog, Yazılım, React, React Native, Node.js, JavaScript, TypeScript, Web Geliştirme, Mobil Uygulama"
-              : "Blog, Software, React, React Native, Node.js, JavaScript, TypeScript, Web Development, Mobile App"
-          }
+          content="Blog, Software, Yazılım, React, React Native, Node.js, JavaScript, TypeScript, Web Geliştirme, Web Development, Mobil Uygulama, Mobile App"
         />
         <meta
           property="og:title"
-          content={
-            language === "tr"
-              ? "Blog Yazılarım - Muhammed Metehan Yıldırım"
-              : "My Blog Posts - Muhammed Metehan Yıldırım"
-          }
+          content="My Blog Posts - Muhammed Metehan Yıldırım"
         />
         <meta
           property="og:description"
-          content={
-            language === "tr"
-              ? "Yazılım geliştirme ve modern teknolojiler hakkında blog yazılarım"
-              : "My blog posts about software development and modern technologies"
-          }
+          content="My blog posts about software development and modern technologies"
         />
         <meta
           property="og:url"
@@ -336,9 +285,9 @@ const BlogList = () => {
               }}
             >
               <span className="inline-flex items-center gap-4">
-                <FaBolt className="text-yellow-400 lightning-flash" />
+                <FaBolt className="text-yellow-400 electric-pulse" />
                 {text.title}
-                <FaBolt className="text-yellow-400 lightning-flash" />
+                <FaBolt className="text-yellow-400 electric-pulse" />
               </span>
             </motion.h1>
             <motion.p

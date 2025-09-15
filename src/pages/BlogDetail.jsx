@@ -45,9 +45,8 @@ const BlogDetail = () => {
     setRelatedPosts(related);
 
     // SEO Meta tags güncelle
-    const title = language === "tr" ? foundPost.titleTr : foundPost.title;
-    const description =
-      language === "tr" ? foundPost.descriptionTr : foundPost.description;
+    const title = foundPost.title;
+    const description = foundPost.description;
 
     document.title = `${title} | Metehan Yıldırım Blog`;
 
@@ -80,56 +79,36 @@ const BlogDetail = () => {
 
   if (!post) return null;
 
-  const title = language === "tr" ? post.titleTr : post.title;
-  const description = language === "tr" ? post.descriptionTr : post.description;
-  const category = language === "tr" ? post.categoryTr : post.category;
+  const title = post.title;
+  const description = post.description;
+  const category = post.category;
 
-  const content = {
-    tr: {
-      backToBlog: "Blog'a Dön",
-      readTime: "dakika okuma",
-      sharePost: "Yazıyı Paylaş",
-      bookmark: "Yer İmi Ekle",
-      bookmarked: "Yer İmine Eklendi",
-      relatedPosts: "İlgili Yazılar",
-      readMore: "Devamını Oku",
-    },
-    en: {
-      backToBlog: "Back to Blog",
-      readTime: "min read",
-      sharePost: "Share Post",
-      bookmark: "Bookmark",
-      bookmarked: "Bookmarked",
-      relatedPosts: "Related Posts",
-      readMore: "Read More",
-    },
+  const text = {
+    backToBlog: "Back to Blog",
+    readTime: "min read",
+    sharePost: "Share Post",
+    bookmark: "Bookmark",
+    bookmarked: "Bookmarked",
+    relatedPosts: "Related Posts",
+    readMore: "Read More",
   };
-
-  const text = content[language];
 
   return (
     <>
       <Helmet>
-        <title>
-          {post?.title || (language === "tr" ? "Blog Yazısı" : "Blog Post")} -
-          Muhammed Metehan Yıldırım
-        </title>
+        <title>{post?.title || "Blog Post"} - Muhammed Metehan Yıldırım</title>
         <meta
           name="description"
           content={
             post?.excerpt ||
-            (language === "tr"
-              ? "Yazılım geliştirme konusunda detaylı blog yazısı"
-              : "Detailed blog post about software development")
+            "Detailed blog post about software development and technology."
           }
         />
         <meta
           name="keywords"
           content={
             post?.tags?.join(", ") ||
-            (language === "tr"
-              ? "Blog, Yazılım, Geliştirme, Teknoloji"
-              : "Blog, Software, Development, Technology")
+            "Blog, Software, Yazılım, Geliştirme, Teknoloji, Development, Technology"
           }
         />
         <meta name="author" content="Muhammed Metehan Yıldırım" />
@@ -271,7 +250,7 @@ const BlogDetail = () => {
                 {text.sharePost}
               </button>
 
-              <button
+              {/* <button
                 onClick={() => setIsBookmarked(!isBookmarked)}
                 className={`flex items-center gap-2 px-4 py-2 rounded-lg border transition-colors ${
                   isBookmarked
@@ -283,7 +262,7 @@ const BlogDetail = () => {
               >
                 <FaBookmark />
                 {isBookmarked ? text.bookmarked : text.bookmark}
-              </button>
+              </button> */}
             </div>
           </motion.header>
 

@@ -25,18 +25,14 @@ const NotFound = () => {
   // SEO için document title güncelle
   useEffect(() => {
     document.title =
-      language === "tr"
-        ? "404 - Sayfa Bulunamadı | Metehan Yıldırım - Frontend Developer"
-        : "404 - Page Not Found | Metehan Yıldırım - Frontend Developer";
+      "404 - Page Not Found | Metehan Yıldırım - Frontend Developer";
 
     // Meta description güncelle
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
       metaDescription.setAttribute(
         "content",
-        language === "tr"
-          ? "Aradığınız sayfa bulunamadı. Metehan Yıldırım portfolio sitesinde diğer sayfalara göz atabilirsiniz."
-          : "The page you are looking for could not be found. You can browse other pages on Metehan Yıldırım's portfolio website."
+        "The page you are looking for could not be found. You can browse other pages on Metehan Yıldırım's portfolio website."
       );
     }
 
@@ -57,7 +53,7 @@ const NotFound = () => {
       if (metaDescription) {
         metaDescription.setAttribute(
           "content",
-          "Metehan Yıldırım (Muhammed Metehan Yıldırım) - 8+ yıl deneyimli Frontend Developer. React.js, Ionic, JavaScript, TypeScript ile modern web ve mobil uygulamalar geliştiriyorum. Portfolio ve projelerim."
+          "Muhammed Metehan Yıldırım - 8+ years experienced Frontend Developer. Building modern web and mobile applications with React.js, Ionic, JavaScript. Portfolio and tech blog posts here."
         );
       }
       if (robotsMeta) {
@@ -74,139 +70,71 @@ const NotFound = () => {
     }
   }, [location.pathname]);
 
-  const content = {
-    tr: {
-      title: "404",
-      subtitle: "Sayfa Bulunamadı",
-      description: "Aradığınız sayfa mevcut değil veya taşınmış olabilir.",
-      suggestion:
-        "Ana sayfaya dönebilir veya aşağıdaki bağlantıları kullanabilirsiniz:",
-      homeButton: "Ana Sayfaya Dön",
-      backButton: "Geri Dön",
-      searchSuggestion: "Belki bunlar işinize yarayabilir:",
-      errorCode: "Hata Kodu: 404",
-      links: [
-        {
-          path: "/",
-          label: "Ana Sayfa",
-          description: "Portfolio ana sayfası",
-          icon: FaHome,
-          color: "from-blue-500 to-cyan-500",
-        },
-        {
-          path: "/about",
-          label: "Hakkımda",
-          description: "Kim olduğumu öğrenin",
-          icon: FaUser,
-          color: "from-purple-500 to-pink-500",
-        },
-        {
-          path: "/skills",
-          label: "Yetenekler",
-          description: "Teknik becerilerim",
-          icon: FaCode,
-          color: "from-green-500 to-teal-500",
-        },
-        {
-          path: "/projects",
-          label: "Projeler",
-          description: "Geliştirdiğim projeler",
-          icon: FaProjectDiagram,
-          color: "from-orange-500 to-red-500",
-        },
-        {
-          path: "/contact",
-          label: "İletişim",
-          description: "Benimle iletişime geçin",
-          icon: FaEnvelope,
-          color: "from-indigo-500 to-purple-500",
-        },
-      ],
-    },
-    en: {
-      title: "404",
-      subtitle: "Page Not Found",
-      description:
-        "The page you are looking for doesn't exist or may have been moved.",
-      suggestion: "You can return to the homepage or use the links below:",
-      homeButton: "Go to Homepage",
-      backButton: "Go Back",
-      searchSuggestion: "Maybe these might help:",
-      errorCode: "Error Code: 404",
-      links: [
-        {
-          path: "/",
-          label: "Home",
-          description: "Portfolio homepage",
-          icon: FaHome,
-          color: "from-blue-500 to-cyan-500",
-        },
-        {
-          path: "/about",
-          label: "About",
-          description: "Get to know me",
-          icon: FaUser,
-          color: "from-purple-500 to-pink-500",
-        },
-        {
-          path: "/skills",
-          label: "Skills",
-          description: "My technical skills",
-          icon: FaCode,
-          color: "from-green-500 to-teal-500",
-        },
-        {
-          path: "/projects",
-          label: "Projects",
-          description: "My developed projects",
-          icon: FaProjectDiagram,
-          color: "from-orange-500 to-red-500",
-        },
-        {
-          path: "/contact",
-          label: "Contact",
-          description: "Get in touch with me",
-          icon: FaEnvelope,
-          color: "from-indigo-500 to-purple-500",
-        },
-      ],
-    },
+  const text = {
+    title: "404",
+    subtitle: "Page Not Found",
+    description:
+      "The page you are looking for doesn't exist or may have been moved.",
+    suggestion: "You can return to the homepage or use the links below:",
+    homeButton: "Go to Homepage",
+    backButton: "Go Back",
+    searchSuggestion: "Maybe these might help:",
+    errorCode: "Error Code: 404",
+    links: [
+      {
+        path: "/",
+        label: "Home",
+        description: "Portfolio homepage",
+        icon: FaHome,
+        color: "from-blue-500 to-cyan-500",
+      },
+      {
+        path: "/about",
+        label: "About",
+        description: "Get to know me",
+        icon: FaUser,
+        color: "from-purple-500 to-pink-500",
+      },
+      {
+        path: "/skills",
+        label: "Skills",
+        description: "My technical skills",
+        icon: FaCode,
+        color: "from-green-500 to-teal-500",
+      },
+      {
+        path: "/projects",
+        label: "Projects",
+        description: "My developed projects",
+        icon: FaProjectDiagram,
+        color: "from-orange-500 to-red-500",
+      },
+      {
+        path: "/contact",
+        label: "Contact",
+        description: "Get in touch with me",
+        icon: FaEnvelope,
+        color: "from-indigo-500 to-purple-500",
+      },
+    ],
   };
-
-  const text = content[language];
 
   return (
     <>
       <Helmet>
-        <title>
-          {language === "tr"
-            ? "404 - Sayfa Bulunamadı | Muhammed Metehan Yıldırım"
-            : "404 - Page Not Found | Muhammed Metehan Yıldırım"}
-        </title>
+        <title>404 - Page Not Found | Muhammed Metehan Yıldırım</title>
         <meta
           name="description"
-          content={
-            language === "tr"
-              ? "Aradığınız sayfa bulunamadı. Ana sayfaya dönebilir veya diğer sayfalarımızı ziyaret edebilirsiniz."
-              : "The page you are looking for could not be found. You can return to the homepage or visit our other pages."
-          }
+          content="The page you are looking for could not be found. You can return to the homepage or visit our other pages."
         />
         <meta name="robots" content="noindex, nofollow" />
         <meta
           property="og:title"
-          content={
-            language === "tr"
-              ? "404 - Sayfa Bulunamadı"
-              : "404 - Page Not Found"
-          }
+          content="404 - Page Not Found | Muhammed Metehan Yıldırım"
         />
         <meta
           property="og:description"
-          content={
-            language === "tr"
-              ? "Aradığınız sayfa bulunamadı"
-              : "The page you are looking for could not be found"
-          }
+          content="The page you are looking for could not be found"
         />
       </Helmet>
       <div
@@ -415,9 +343,7 @@ const NotFound = () => {
                 theme === "dark" ? "text-gray-400" : "text-gray-600"
               }`}
             >
-              {language === "tr"
-                ? "Ana sayfaya dönmek için yıldırım hızında!"
-                : "Lightning fast back to homepage!"}
+              Lightning fast back to homepage!
             </span>
             <FaBolt className="text-yellow-400 lightning-flash" />
           </motion.div>
