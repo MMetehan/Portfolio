@@ -1,5 +1,5 @@
 ---
-title: "Why Choose **Native** Languages Over Ionic / React Native?"
+title: "Why Choose Native Languages Over Ionic / React Native?"
 description: "Ionic and React Native are great — they speed up prototyping and let you share a single codebase. But when it comes to performance, hardware integration, security, and long-term maintenance, native languages (Kotlin/Java, Swift/Objective-C) still have strong advantages. This post walks through the technical and practical reasons to prefer native development in many real-world projects."
 excerpt: "Cross-platform tools are fast to ship; native code gives you control and performance. Here’s how to choose the right approach."
 date: "2025-09-15"
