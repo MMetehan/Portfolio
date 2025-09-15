@@ -1,7 +1,7 @@
 {
-    "name": "Metehan Yıldırım (Muhammed Metehan Yıldırım) - Portfolio & Blog",
+    "name": "Muhammed Metehan Yıldırım - Portfolio & Blog",
     "short_name": "Metehan Portfolio",
-    "description": "Frontend Developer Portfolio & Blog - React.js, Ionic, JavaScript uzmanı. Tech blog yazıları ve projeler.",
+    "description": "Frontend Developer Portfolio & Blog - React.js, Ionic, JavaScript specialist. Tech blog posts and projects.",
     "start_url": "/",
     "display": "standalone",
     "background_color": "#000000",
@@ -38,14 +38,14 @@
         "blog",
         "education"
     ],
-    "lang": "tr",
+    "lang": "en",
     "scope": "/",
     "id": "metehan-portfolio",
     "shortcuts": [
         {
             "name": "Blog",
             "short_name": "Blog",
-            "description": "Tech blog yazıları",
+            "description": "Tech blog posts",
             "url": "/blog",
             "icons": [
                 {
@@ -55,9 +55,9 @@
             ]
         },
         {
-            "name": "Projeler",
+            "name": "Projects",
             "short_name": "Projects",
-            "description": "Portfolio projeleri",
+            "description": "Portfolio projects",
             "url": "/projects",
             "icons": [
                 {
@@ -67,9 +67,9 @@
             ]
         },
         {
-            "name": "İletişim",
+            "name": "Contact",
             "short_name": "Contact",
-            "description": "İletişim bilgileri",
+            "description": "Contact information",
             "url": "/contact",
             "icons": [
                 {

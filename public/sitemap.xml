@@ -5,61 +5,49 @@
   <!-- Homepage -->
   <url>
     <loc>https://metehan-yildirim.com/</loc>
-    <lastmod>2025-09-06T00:00:00+03:00</lastmod>
+    <lastmod>2025-09-15T00:00:00+03:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://metehan-yildirim.com/" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://metehan-yildirim.com/" />
   </url>
   
   <!-- About Page -->
   <url>
     <loc>https://metehan-yildirim.com/about</loc>
-    <lastmod>2025-09-06T00:00:00+03:00</lastmod>
+    <lastmod>2025-09-15T00:00:00+03:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://metehan-yildirim.com/about" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://metehan-yildirim.com/about" />
   </url>
 
   <!-- Skills Page -->
   <url>
     <loc>https://metehan-yildirim.com/skills</loc>
-    <lastmod>2025-09-06T00:00:00+03:00</lastmod>
+    <lastmod>2025-09-15T00:00:00+03:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://metehan-yildirim.com/skills" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://metehan-yildirim.com/skills" />
   </url>
   
   <!-- Projects Page -->
   <url>
     <loc>https://metehan-yildirim.com/projects</loc>
-    <lastmod>2025-09-06T00:00:00+03:00</lastmod>
+    <lastmod>2025-09-15T00:00:00+03:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://metehan-yildirim.com/projects" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://metehan-yildirim.com/projects" />
   </url>
   
   <!-- Contact Page -->
   <url>
     <loc>https://metehan-yildirim.com/contact</loc>
-    <lastmod>2025-09-06T00:00:00+03:00</lastmod>
+    <lastmod>2025-09-15T00:00:00+03:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://metehan-yildirim.com/contact" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://metehan-yildirim.com/contact" />
   </url>
 
   <!-- Blog Main Page -->
   <url>
     <loc>https://metehan-yildirim.com/blog</loc>
-    <lastmod>2025-09-06T00:00:00+03:00</lastmod>
+    <lastmod>2025-09-15T00:00:00+03:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://metehan-yildirim.com/blog" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://metehan-yildirim.com/blog" />
   </url>
 
   <!-- Blog Posts -->
@@ -70,8 +58,6 @@
     <lastmod>2024-12-20T00:00:00+03:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://metehan-yildirim.com/blog/react-hooks" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://metehan-yildirim.com/blog/react-hooks" />
   </url>
 
   <!-- JavaScript Performance Tips -->
@@ -80,8 +66,6 @@
     <lastmod>2024-12-19T00:00:00+03:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://metehan-yildirim.com/blog/javascript-performance-tips" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://metehan-yildirim.com/blog/javascript-performance-tips" />
   </url>
 
   <!-- Next.js 14 App Router Guide -->
@@ -90,8 +74,6 @@
     <lastmod>2024-12-22T00:00:00+03:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://metehan-yildirim.com/blog/nextjs-14-app-router-guide" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://metehan-yildirim.com/blog/nextjs-14-app-router-guide" />
   </url>
 
   <!-- React State Management 2024 -->
@@ -100,8 +82,6 @@
     <lastmod>2024-12-21T00:00:00+03:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://metehan-yildirim.com/blog/react-state-management-2024" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://metehan-yildirim.com/blog/react-state-management-2024" />
   </url>
 
   <!-- TypeScript React Best Practices -->
@@ -110,8 +90,6 @@
     <lastmod>2024-12-18T00:00:00+03:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://metehan-yildirim.com/blog/typescript-react-best-practices" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://metehan-yildirim.com/blog/typescript-react-best-practices" />
   </url>
 
   <!-- CSS Grid & Flexbox Mastery -->
@@ -120,8 +98,6 @@
     <lastmod>2024-12-17T00:00:00+03:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://metehan-yildirim.com/blog/css-grid-flexbox-mastery" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://metehan-yildirim.com/blog/css-grid-flexbox-mastery" />
   </url>
 
   <!-- Web Security Tips -->
@@ -130,8 +106,6 @@
     <lastmod>2024-12-16T00:00:00+03:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://metehan-yildirim.com/blog/web-security-tips" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://metehan-yildirim.com/blog/web-security-tips" />
   </url>
   
   <!-- A Curious Developer's Journey -->
@@ -140,8 +114,14 @@
     <lastmod>2024-12-16T00:00:00+03:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://metehan-yildirim.com/blog/a-curious-developers-journey" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://metehan-yildirim.com/blog/a-curious-developers-journey" />
+  </url>
+
+   <!-- Native vs Crossplatform -->
+  <url>
+    <loc>https://metehan-yildirim.com/blog/native-vs-crossplatform</loc>
+    <lastmod>2024-12-16T00:00:00+03:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
 
 </urlset>
