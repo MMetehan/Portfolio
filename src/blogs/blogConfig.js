@@ -17,44 +17,129 @@ function parseFrontmatter(content) {
   const frontmatterText = match[1];
   const markdownContent = content.slice(match[0].length);
 
-  // Simple YAML-like parser
+  // Advanced YAML-like parser that handles multi-line arrays
   const metadata = {};
   const lines = frontmatterText.split("\n");
 
-  for (const line of lines) {
+  let i = 0;
+  while (i < lines.length) {
+    const line = lines[i].trim();
+    if (!line || line.startsWith("#")) {
+      i++;
+      continue;
+    }
+
     const colonIndex = line.indexOf(":");
-    if (colonIndex === -1) continue;
+    if (colonIndex === -1) {
+      i++;
+      continue;
+    }
 
     const key = line.slice(0, colonIndex).trim();
     let value = line.slice(colonIndex + 1).trim();
 
-    // Remove quotes
-    if (
-      (value.startsWith('"') && value.endsWith('"')) ||
-      (value.startsWith("'") && value.endsWith("'"))
-    ) {
-      value = value.slice(1, -1);
-    }
+    // Handle multi-line arrays - check if next line starts with [
+    if (!value && i + 1 < lines.length && lines[i + 1].trim().startsWith("[")) {
+      const arrayItems = [];
+      i++; // Move to the [ line
 
-    // Handle arrays (tags)
-    if (value.startsWith("[") && value.endsWith("]")) {
+      // Continue reading until we find the closing ]
+      while (i < lines.length) {
+        const arrayLine = lines[i].trim();
+
+        if (arrayLine === "]") {
+          break;
+        }
+
+        // Skip the opening [ line
+        if (arrayLine === "[") {
+          i++;
+          continue;
+        }
+
+        if (arrayLine && !arrayLine.startsWith("#")) {
+          // Remove quotes and trailing comma
+          const item = arrayLine.replace(/['"]/g, "").replace(/,$/, "").trim();
+          if (item) {
+            arrayItems.push(item);
+          }
+        }
+        i++;
+      }
+
+      metadata[key] = arrayItems;
+    }
+    // Handle multi-line arrays that start on same line
+    else if (value === "[" || (value.startsWith("[") && !value.endsWith("]"))) {
+      const arrayItems = [];
+
+      // If value starts with [ but doesn't end with ], it's a multi-line array
+      if (value.startsWith("[") && !value.endsWith("]")) {
+        // Extract first item if exists
+        const firstItem = value.slice(1).trim();
+        if (firstItem && firstItem !== ",") {
+          arrayItems.push(firstItem.replace(/['"]/g, "").replace(/,$/, ""));
+        }
+      }
+
+      i++; // Move to next line
+
+      // Continue reading until we find the closing ]
+      while (i < lines.length) {
+        const arrayLine = lines[i].trim();
+
+        if (arrayLine === "]") {
+          break;
+        }
+
+        if (arrayLine && !arrayLine.startsWith("#")) {
+          // Remove quotes and trailing comma
+          const item = arrayLine.replace(/['"]/g, "").replace(/,$/, "").trim();
+          if (item) {
+            arrayItems.push(item);
+          }
+        }
+        i++;
+      }
+
+      metadata[key] = arrayItems;
+    }
+    // Handle single-line arrays
+    else if (value.startsWith("[") && value.endsWith("]")) {
       value = value
         .slice(1, -1)
         .split(",")
         .map((item) => item.trim().replace(/['"]/g, ""));
+      metadata[key] = value;
     }
-
+    // Handle quoted strings
+    else if (
+      (value.startsWith('"') && value.endsWith('"')) ||
+      (value.startsWith("'") && value.endsWith("'"))
+    ) {
+      metadata[key] = value.slice(1, -1);
+    }
     // Handle booleans
-    if (value === "true") value = true;
-    if (value === "false") value = false;
-
+    else if (value === "true") {
+      metadata[key] = true;
+    } else if (value === "false") {
+      metadata[key] = false;
+    }
     // Handle numbers
-    if (!isNaN(value) && value !== "") {
+    else if (!isNaN(value) && value !== "") {
       const num = Number(value);
-      if (Number.isInteger(num)) value = num;
+      if (Number.isInteger(num)) {
+        metadata[key] = num;
+      } else {
+        metadata[key] = value;
+      }
+    }
+    // Handle regular strings
+    else {
+      metadata[key] = value;
     }
 
-    metadata[key] = value;
+    i++;
   }
 
   return { metadata, content: markdownContent };
@@ -89,6 +174,10 @@ function createBlogPostFromMarkdown(filename, content) {
     excerpt =
       textContent.substring(0, 150) + (textContent.length > 150 ? "..." : "");
   }
+
+  console.log(`Processing post: ${slug}`);
+  console.log(`Metadata:`, metadata);
+  console.log(`Tags:`, metadata.tags);
 
   return {
     id: slug,

@@ -8,7 +8,6 @@ import {
   FaClock,
   FaTag,
   FaShare,
-  FaBookmark,
   FaBolt,
 } from "react-icons/fa";
 import { useTheme } from "../ThemeContext";
@@ -24,7 +23,7 @@ const BlogDetail = () => {
   const { slug } = useParams();
   const navigate = useNavigate();
   const location = useLocation();
-  const { theme, language } = useTheme();
+  const { theme } = useTheme();
   const [post, setPost] = useState(null);
   const [relatedPosts, setRelatedPosts] = useState([]);
   const [isBookmarked, setIsBookmarked] = useState(false);
@@ -67,7 +66,7 @@ const BlogDetail = () => {
     if (robotsMeta) {
       robotsMeta.setAttribute("content", "index, follow");
     }
-  }, [slug, navigate, language]);
+  }, [slug, navigate]);
 
   // Canonical URL güncellemesi
   useEffect(() => {
@@ -95,6 +94,7 @@ const BlogDetail = () => {
 
   return (
     <>
+      {console.log(post)}
       <Helmet>
         <title>{post?.title || "Blog Post"} - Muhammed Metehan Yıldırım</title>
         <meta
