@@ -3,7 +3,6 @@
 
 /* Lightning Animations */
 @keyframes lightning-flash {
-
   0%,
   10%,
   20%,
@@ -16,7 +15,8 @@
   15% {
     opacity: 1;
     transform: scale(1);
-    filter: drop-shadow(0 0 20px currentColor) drop-shadow(0 0 40px currentColor);
+    filter: drop-shadow(0 0 20px currentColor)
+      drop-shadow(0 0 40px currentColor);
   }
 }
 
@@ -29,7 +29,8 @@
   10% {
     opacity: 1;
     transform: translateY(0) scaleY(1);
-    filter: drop-shadow(0 0 10px #00ffff) drop-shadow(0 0 20px #00ffff) drop-shadow(0 0 30px #00ffff);
+    filter: drop-shadow(0 0 10px #00ffff) drop-shadow(0 0 20px #00ffff)
+      drop-shadow(0 0 30px #00ffff);
   }
 
   20% {
@@ -44,41 +45,33 @@
 }
 
 @keyframes electric-pulse {
-
   0%,
   100% {
     filter: drop-shadow(0 0 5px currentColor) drop-shadow(0 0 10px currentColor);
   }
 
   50% {
-    filter: drop-shadow(0 0 10px currentColor) drop-shadow(0 0 60px currentColor);
+    filter: drop-shadow(0 0 10px currentColor)
+      drop-shadow(0 0 60px currentColor);
   }
 }
 
 @keyframes lightning-text {
-
   0%,
   90%,
   100% {
-    text-shadow:
-      0 0 5px currentColor,
-      0 0 10px currentColor,
+    text-shadow: 0 0 5px currentColor, 0 0 10px currentColor,
       0 0 15px currentColor;
   }
 
   5%,
   10% {
-    text-shadow:
-      0 0 10px currentColor,
-      0 0 20px currentColor,
-      0 0 30px currentColor,
-      0 0 40px currentColor,
-      0 0 50px currentColor;
+    text-shadow: 0 0 10px currentColor, 0 0 20px currentColor,
+      0 0 30px currentColor, 0 0 40px currentColor, 0 0 50px currentColor;
   }
 }
 
 @keyframes spark-float {
-
   0%,
   100% {
     transform: translateY(0px) rotate(0deg);
@@ -113,10 +106,7 @@
   animation-delay: var(--delay, 0s);
 }
 
-
-
 @keyframes paddingTopPulse {
-
   0%,
   100% {
     padding-top: 0px;
@@ -137,17 +127,22 @@
 }
 
 .markdown-content pre:before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(0, 255, 255, 0.5), transparent);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(0, 255, 255, 0.5),
+    transparent
+  );
 }
 
 .markdown-content code[class*="language-"] {
-  font-family: 'Fira Code', 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+  font-family: "Fira Code", "Monaco", "Menlo", "Ubuntu Mono", monospace;
   font-size: 14px;
   line-height: 1.6;
 }
@@ -194,4 +189,36 @@
 
 .hljs-punctuation {
   color: #f8f8f2;
+}
+
+.box {
+  width: 300px;
+  height: 200px;
+  overflow-y: scroll; /* dikey scroll aktif */
+  border: 1px solid #ddd;
+}
+
+/* Chrome, Safari, Edge */
+.box::-webkit-scrollbar {
+  width: 8px; /* scrollbar genişliği */
+}
+
+.box::-webkit-scrollbar-track {
+  background: #f1f1f1; /* scrollbar arka planı */
+}
+
+.box::-webkit-scrollbar-thumb {
+  background: #3b82f6; /* mavi renk */
+  border-radius: 4px; /* yuvarlatma */
+}
+
+.box::-webkit-scrollbar-thumb:hover {
+  background: #2563eb; /* hover rengi */
+}
+
+/* Firefox */
+.box {
+  scrollbar-width: thin; /* ince scrollbar */
+  scrollbar-color: #3b82f6 #f1f1f1;
+  /* thumb rengi + track rengi */
 }

@@ -201,11 +201,7 @@ const BlogDetail = () => {
             >
               <div className="flex items-center gap-2">
                 <FaCalendarAlt />
-                <span>
-                  {new Date(post.date).toLocaleDateString(
-                    language === "tr" ? "tr-TR" : "en-US"
-                  )}
-                </span>
+                <span>{new Date(post.date).toLocaleDateString("en-US")}</span>
               </div>
               <div className="flex items-center gap-2">
                 <FaClock />
@@ -425,12 +421,8 @@ const BlogDetail = () => {
 
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 {relatedPosts.map((relatedPost, index) => {
-                  const relatedTitle =
-                    language === "tr" ? relatedPost.titleTr : relatedPost.title;
-                  const relatedDescription =
-                    language === "tr"
-                      ? relatedPost.descriptionTr
-                      : relatedPost.description;
+                  const relatedTitle = relatedPost.title;
+                  const relatedDescription = relatedPost.description;
 
                   return (
                     <Link
