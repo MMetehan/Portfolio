@@ -124,4 +124,12 @@
     <priority>0.8</priority>
   </url>
 
+   <!-- Shadcn UI Full Guide -->
+  <url>
+    <loc>https://metehan-yildirim.com/blog/shadcn-ui-full-guide</loc>
+    <lastmod>2024-12-16T00:00:00+03:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
 </urlset>
