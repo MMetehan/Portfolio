@@ -1,13 +1,1 @@
-# Netlify _redirects file for SPA routing
-# This ensures all routes are handled by React Router
-
-# Alternative: Domain redirects (if DNS level redirect is not working)
-# Uncomment these lines if you need to handle www redirects here:
-# https://www.metehan-yildirim.com  https://metehan-yildirim.com  301!
-# https://www.metehan-yildirim.com/*  https://metehan-yildirim.com/:splat  301!
-
 /*    /index.html   200
-# /404   /index.html   200
-
-# Optional: Handle old URLs if you had any
-# /old-path   /new-path   301
