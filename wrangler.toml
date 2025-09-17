@@ -6,9 +6,9 @@ type = "javascript"
 site = { bucket = "./dist", entry-point = "workers-site" }
 
 # Optional: Eğer custom domain kullanıyorsan
-routes = ["https://metehan-yildirim.com/*"]
+# routes = ["https://www.metehan-yildirim.com/*"]
 
 # Optional: Environment example
-[env.production]
-route = "https://metehan-yildirim.com/*"
-zone_id = "4ec8140189da975a77b4903a9c9c7416"
+# [env.production]
+# route = "https://www.metehan-yildirim.com/*"
+# zone_id = "your-zone-id"
