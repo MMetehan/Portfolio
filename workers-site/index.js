@@ -1,12 +1,14 @@
-// functions/index.js
 export default {
   async fetch(request, env, ctx) {
-    const url = new URL(request.url);
     try {
+      // assets klasöründen isteği getir
       return await env.ASSETS.fetch(request);
     } catch (err) {
-      // fallback to index.html for SPA routing
-      return env.ASSETS.fetch(new Request(`${url.origin}/index.html`, request));
+      // SPA fallback: index.html
+      const url = new URL(request.url);
+      return await env.ASSETS.fetch(
+        new Request(`${url.origin}/index.html`, request)
+      );
     }
   },
 };
