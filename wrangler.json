@@ -4,6 +4,5 @@
   "assets": {
     "directory": "./dist",
     "main": "index.html"
-  },
-  "routes": [{ "pattern": "/*", "destination": "/index.html" }]
+  }
 }
