@@ -1,14 +1,14 @@
-export default {
-  async fetch(request, env, ctx) {
-    try {
-      // assets klasöründen isteği getir
-      return await env.ASSETS.fetch(request);
-    } catch (err) {
-      // SPA fallback: index.html
-      const url = new URL(request.url);
-      return await env.ASSETS.fetch(
-        new Request(`${url.origin}/index.html`, request)
-      );
-    }
-  },
-};
+import { getAssetFromKV } from "@cloudflare/kv-asset-handler";
+
+addEventListener("fetch", (event) => {
+  try {
+    event.respondWith(getAssetFromKV(event));
+  } catch (e) {
+    // Asset bulunamazsa index.html döndür (SPA fallback)
+    event.respondWith(
+      getAssetFromKV(event, {
+        mapRequestToAsset: () => new Request("/index.html"),
+      })
+    );
+  }
+});
