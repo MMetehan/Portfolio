@@ -1,6 +1,10 @@
 {
   "name": "my-portfolio",
   "compatibility_date": "2025-09-17",
+  "assets": {
+    "directory": "./dist",
+    "main": "index.html"
+  },
   "site": {
     "bucket": "./dist",
     "entry-point": "workers-site"
