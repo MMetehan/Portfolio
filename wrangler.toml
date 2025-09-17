@@ -1,19 +1,14 @@
 name = "my-portfolio"
 compatibility_date = "2025-09-17"
-# Uncomment the following line if you want to use a specific account ID
-# account_id = "your-account-id"
-
-# Site configuration
 type = "javascript"
-site = { 
-  bucket = "./dist",        # React build output klasörü
-  entry-point = "workers-site"  # Worker kodlarının olduğu klasör
-}
+
+# Site configuration (inline table tek satırda)
+site = { bucket = "./dist", entry-point = "workers-site" }
 
 # Optional: Eğer custom domain kullanıyorsan
-# routes = ["https://www.metehan-yildirim.com/*"]
+routes = ["https://metehan-yildirim.com/*"]
 
 # Optional: Environment example
-# [env.production]
-# route = "https://www.metehan-yildirim.com/*"
-# zone_id = "your-zone-id"
+[env.production]
+route = "https://metehan-yildirim.com/*"
+zone_id = "4ec8140189da975a77b4903a9c9c7416"
