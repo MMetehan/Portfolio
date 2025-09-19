@@ -175,10 +175,6 @@ function createBlogPostFromMarkdown(filename, content) {
       textContent.substring(0, 150) + (textContent.length > 150 ? "..." : "");
   }
 
-  console.log(`Processing post: ${slug}`);
-  console.log(`Metadata:`, metadata);
-  console.log(`Tags:`, metadata.tags);
-
   return {
     id: slug,
     slug,
@@ -227,8 +223,6 @@ const allPosts = Object.entries(postModules)
   .filter((post) => post.published)
   .sort((a, b) => new Date(b.date) - new Date(a.date));
 
-// Debug: Log all generated posts
-console.log("Auto-generated blog posts:");
 console.table(
   allPosts.map((post) => ({
     slug: post.slug,

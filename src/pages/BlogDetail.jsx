@@ -94,7 +94,6 @@ const BlogDetail = () => {
 
   return (
     <>
-      {console.log(post)}
       <Helmet>
         <title>{post?.title || "Blog Post"} - Muhammed Metehan Yıldırım</title>
         <meta

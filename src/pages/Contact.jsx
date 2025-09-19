@@ -101,7 +101,6 @@ const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("Form submitted:", formData);
   };
 
   useEffect(() => {
