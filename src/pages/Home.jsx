@@ -103,7 +103,7 @@ const Home = () => {
       <div className="min-h-screen">
         {/* Hero Section */}
         <div
-          className={`min-h-screen flex items-center justify-center px-4 relative overflow-hidden ${
+          className={`min-h-screen flex items-center justify-center px-4 pt-24 relative overflow-hidden ${
             theme === "dark"
               ? "bg-gradient-to-br from-gray-900 via-purple-900 to-black"
               : "bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50"
