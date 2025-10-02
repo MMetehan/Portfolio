@@ -104,8 +104,8 @@ const Home = () => {
         {/* Hero Section */}
         <div
           className={`min-h-screen flex items-center justify-center px-4 pt-24 relative overflow-hidden ${theme === "dark"
-              ? "bg-gradient-to-br from-gray-900 via-purple-900 to-black"
-              : "bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50"
+            ? "bg-gradient-to-br from-gray-900 via-purple-900 to-black"
+            : "bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50"
             }`}
         >
           <FloatingSparks />
@@ -136,8 +136,8 @@ const Home = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: firstLanding ? 0.6 : 0 }}
                 className={`text-5xl md:text-6xl font-bold mb-4 lightning-text ${theme === "dark"
-                    ? "text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400"
-                    : "text-transparent bg-clip-text bg-gradient-to-r from-purple-600 via-blue-600 to-indigo-600"
+                  ? "text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400"
+                  : "text-transparent bg-clip-text bg-gradient-to-r from-purple-600 via-blue-600 to-indigo-600"
                   }`}
                 style={{
                   textShadow:
@@ -178,33 +178,65 @@ const Home = () => {
                 transition={{ duration: 0.8, delay: firstLanding ? 1.2 : 0 }}
                 className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-8"
               >
-                <motion.a
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  href="./muhammed-metehan-yildirim-TR.pdf"
-                  download
-                  className={`lightning-button px-8 py-4 rounded-full font-medium transition-all duration-300 flex items-center gap-2 ${theme === "dark"
+                <div className="relative">
+                  <motion.select
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    onChange={(e) => {
+                      const value = e.target.value;
+                      if (value) {
+                        //make CV downlaoder with values
+                        window.open(value, '_blank');
+                      }
+                    }}
+                    className={`lightning-button px-8 py-4 rounded-full font-medium transition-all duration-300 appearance-none cursor-pointer min-w-48 text-center ${theme === "dark"
                       ? "bg-gradient-to-r from-cyan-500 to-purple-600 text-white hover:from-cyan-400 hover:to-purple-500"
                       : "bg-gradient-to-r from-purple-600 to-blue-600 text-white hover:from-purple-500 hover:to-blue-500"
-                    }`}
-                  style={{
-                    boxShadow:
-                      theme === "dark"
-                        ? "0 0 30px rgba(0, 255, 255, 0.3)"
-                        : "0 10px 30px rgba(0, 0, 0, 0.2)",
-                  }}
-                >
-                  <FaDownload />
-                  {text.downloadCV}
-                </motion.a>
+                      }`}
+                    style={{
+                      boxShadow:
+                        theme === "dark"
+                          ? "0 0 30px rgba(0, 255, 255, 0.3)"
+                          : "0 10px 30px rgba(0, 0, 0, 0.2)",
+                    }}
+                    defaultValue=""
+                  >
+                    <option value="" disabled className={theme === "dark" ? "bg-gray-800 text-white" : "bg-white text-gray-800"}>
+                      {text.downloadCV}
+                    </option>
+                    <option
+                      value="/muhammed-metehan-yildirim-EN.pdf"
+                      className={theme === "dark" ? "bg-gray-800 text-white" : "bg-white text-gray-800"}
+                    >
+                      📄 English CV
+                    </option>
+                    <option
+                      value="/muhammed-metehan-yildirim-TR.pdf"
+                      className={theme === "dark" ? "bg-gray-800 text-white" : "bg-white text-gray-800"}
+                    >
+                      📄 Türkçe CV
+                    </option>
+                  </motion.select>
+                  <FaDownload className="absolute left-6 top-1/2 transform -translate-y-1/2 pointer-events-none" color="white" />
+                  <div className="absolute right-4 top-1/2 transform -translate-y-1/2 pointer-events-none text-white">
+                    <svg
+                      className="w-5 h-5"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </div>
+                </div>
 
                 <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   onClick={() => navigate("/projects")}
                   className={`px-8 py-4 rounded-full font-medium border-2 transition-all duration-300 ${theme === "dark"
-                      ? "border-cyan-400 text-cyan-400 hover:bg-cyan-400 hover:text-black"
-                      : "border-purple-600 text-purple-600 hover:bg-purple-600 hover:text-white"
+                    ? "border-cyan-400 text-cyan-400 hover:bg-cyan-400 hover:text-black"
+                    : "border-purple-600 text-purple-600 hover:bg-purple-600 hover:text-white"
                     }`}
                 >
                   {text.viewProjects}
@@ -246,8 +278,8 @@ const Home = () => {
                     target="_blank"
                     whileHover={{ scale: 1.2, y: -5 }}
                     className={`text-2xl transition-colors duration-300 ${theme === "dark"
-                        ? "text-gray-400 hover:text-cyan-400"
-                        : "text-gray-600 hover:text-purple-600"
+                      ? "text-gray-400 hover:text-cyan-400"
+                      : "text-gray-600 hover:text-purple-600"
                       }`}
                     style={{
                       filter:
@@ -278,8 +310,8 @@ const Home = () => {
                   ease: "easeInOut",
                 }}
                 className={`relative ${theme === "dark"
-                    ? "bg-gradient-to-br from-cyan-400 to-purple-600"
-                    : "bg-gradient-to-br from-purple-400 to-blue-600"
+                  ? "bg-gradient-to-br from-cyan-400 to-purple-600"
+                  : "bg-gradient-to-br from-purple-400 to-blue-600"
                   } p-1 rounded-full shadow-2xl`}
                 style={{
                   boxShadow:
@@ -317,8 +349,8 @@ const Home = () => {
         {featuredPosts.length > 0 && (
           <section
             className={`py-20 px-4 relative ${theme === "dark"
-                ? "bg-gradient-to-br from-black via-gray-900 to-purple-900"
-                : "bg-gradient-to-br from-pink-50 via-purple-50 to-blue-50"
+              ? "bg-gradient-to-br from-black via-gray-900 to-purple-900"
+              : "bg-gradient-to-br from-pink-50 via-purple-50 to-blue-50"
               }`}
           >
             <FloatingSparks />
@@ -336,8 +368,8 @@ const Home = () => {
               >
                 <motion.h2
                   className={`text-4xl md:text-5xl font-bold mb-6 lightning-text ${theme === "dark"
-                      ? "text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400"
-                      : "text-transparent bg-clip-text bg-gradient-to-r from-purple-600 via-blue-600 to-indigo-600"
+                    ? "text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400"
+                    : "text-transparent bg-clip-text bg-gradient-to-r from-purple-600 via-blue-600 to-indigo-600"
                     }`}
                   style={{
                     textShadow:
@@ -378,8 +410,8 @@ const Home = () => {
                       <Link
                         to={`/blog/${post.slug}`}
                         className={`block p-8 rounded-xl border transition-all duration-300 h-full ${theme === "dark"
-                            ? "bg-gray-800/50 border-gray-700 hover:border-cyan-500/50"
-                            : "bg-white/70 border-gray-200 shadow-lg hover:border-purple-400/50"
+                          ? "bg-gray-800/50 border-gray-700 hover:border-cyan-500/50"
+                          : "bg-white/70 border-gray-200 shadow-lg hover:border-purple-400/50"
                           }`}
                         style={{
                           backdropFilter: "blur(20px)",
@@ -390,8 +422,8 @@ const Home = () => {
                         <div className="flex items-center justify-between mb-4">
                           <span
                             className={`px-4 py-2 rounded-full text-sm font-medium ${theme === "dark"
-                                ? "bg-cyan-500/20 text-cyan-400"
-                                : "bg-purple-500/20 text-purple-600"
+                              ? "bg-cyan-500/20 text-cyan-400"
+                              : "bg-purple-500/20 text-purple-600"
                               }`}
                           >
                             {category}
@@ -437,8 +469,8 @@ const Home = () => {
                         {/* Read More */}
                         <div
                           className={`flex items-center gap-2 font-medium group-hover:gap-3 transition-all ${theme === "dark"
-                              ? "text-cyan-400"
-                              : "text-purple-600"
+                            ? "text-cyan-400"
+                            : "text-purple-600"
                             }`}
                         >
                           <span>{text.readMore}</span>
@@ -461,8 +493,8 @@ const Home = () => {
                 <Link
                   to="/blog"
                   className={`inline-flex items-center gap-3 px-8 py-4 rounded-full font-medium transition-all duration-300 hover:scale-105 ${theme === "dark"
-                      ? "bg-gradient-to-r from-cyan-500 to-purple-600 text-white hover:from-cyan-400 hover:to-purple-500"
-                      : "bg-gradient-to-r from-purple-600 to-blue-600 text-white hover:from-purple-500 hover:to-blue-500"
+                    ? "bg-gradient-to-r from-cyan-500 to-purple-600 text-white hover:from-cyan-400 hover:to-purple-500"
+                    : "bg-gradient-to-r from-purple-600 to-blue-600 text-white hover:from-purple-500 hover:to-blue-500"
                     }`}
                   style={{
                     boxShadow:
