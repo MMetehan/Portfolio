@@ -137,7 +137,7 @@ const Contact = () => {
     {
       icon: FaLinkedin,
       name: "LinkedIn",
-      url: "https://www.linkedin.com/in/muhammed-metehan-y%C4%B1ld%C4%B1r%C4%B1m-17687b169/",
+      url: "https://www.linkedin.com/in/muhammed-metehan-yıldırım",
       color: "#0077B5",
     },
     {
@@ -178,11 +178,10 @@ const Contact = () => {
         />
       </Helmet>
       <div
-        className={`min-h-screen py-20 px-4 relative overflow-hidden ${
-          theme === "dark"
+        className={`min-h-screen py-20 px-4 relative overflow-hidden ${theme === "dark"
             ? "bg-gradient-to-br from-gray-900 via-purple-900 to-black"
             : "bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50"
-        }`}
+          }`}
       >
         <FloatingSparks />
         <LightningBolt delay={0} className="top-20 left-10" />
@@ -198,11 +197,10 @@ const Contact = () => {
             className="text-center mb-16"
           >
             <motion.h1
-              className={`text-5xl md:text-6xl font-bold mb-6 lightning-text ${
-                theme === "dark"
+              className={`text-5xl md:text-6xl font-bold mb-6 lightning-text ${theme === "dark"
                   ? "text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400"
                   : "text-transparent bg-clip-text bg-gradient-to-r from-purple-600 via-blue-600 to-indigo-600"
-              }`}
+                }`}
               style={{
                 textShadow:
                   theme === "dark" ? "0 0 30px rgba(0, 255, 255, 0.3)" : "none",
@@ -218,9 +216,8 @@ const Contact = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: firstLanding ? 0.2 : 0 }}
-              className={`text-xl ${
-                theme === "dark" ? "text-cyan-400" : "text-purple-600"
-              }`}
+              className={`text-xl ${theme === "dark" ? "text-cyan-400" : "text-purple-600"
+                }`}
             >
               {text.subtitle}
             </motion.p>
@@ -234,11 +231,10 @@ const Contact = () => {
               className="space-y-8"
             >
               <div
-                className={`contact-card p-8 rounded-xl border ${
-                  theme === "dark"
+                className={`contact-card p-8 rounded-xl border ${theme === "dark"
                     ? "bg-gray-800/50 border-gray-700 backdrop-blur-sm"
                     : "bg-white/70 border-gray-200 backdrop-blur-sm shadow-lg"
-                }`}
+                  }`}
                 style={{
                   boxShadow:
                     theme === "dark"
@@ -247,9 +243,8 @@ const Contact = () => {
                 }}
               >
                 <h3
-                  className={`text-2xl font-bold mb-6 ${
-                    theme === "dark" ? "text-white" : "text-gray-800"
-                  }`}
+                  className={`text-2xl font-bold mb-6 ${theme === "dark" ? "text-white" : "text-gray-800"
+                    }`}
                 >
                   {text.contactInfo}
                 </h3>
@@ -266,40 +261,36 @@ const Contact = () => {
                       className="flex items-center space-x-4"
                     >
                       <div
-                        className={`p-3 rounded-lg ${
-                          theme === "dark"
+                        className={`p-3 rounded-lg ${theme === "dark"
                             ? "bg-gradient-to-r from-cyan-500 to-purple-500"
                             : "bg-gradient-to-r from-purple-600 to-blue-600"
-                        }`}
+                          }`}
                       >
                         <info.icon className="text-white text-xl" />
                       </div>
                       <div>
                         <p
-                          className={`font-semibold ${
-                            theme === "dark" ? "text-white" : "text-gray-800"
-                          }`}
+                          className={`font-semibold ${theme === "dark" ? "text-white" : "text-gray-800"
+                            }`}
                         >
                           {info.title}
                         </p>
                         {info.link ? (
                           <a
                             href={info.link}
-                            className={`transition-colors duration-300 ${
-                              theme === "dark"
+                            className={`transition-colors duration-300 ${theme === "dark"
                                 ? "text-cyan-400 hover:text-cyan-300"
                                 : "text-purple-600 hover:text-purple-700"
-                            }`}
+                              }`}
                           >
                             {info.value}
                           </a>
                         ) : (
                           <p
-                            className={`${
-                              theme === "dark"
+                            className={`${theme === "dark"
                                 ? "text-gray-300"
                                 : "text-gray-600"
-                            }`}
+                              }`}
                           >
                             {info.value}
                           </p>
@@ -310,11 +301,10 @@ const Contact = () => {
                 </div>
               </div>
               <div
-                className={`social-media-card p-8 rounded-xl border ${
-                  theme === "dark"
+                className={`social-media-card p-8 rounded-xl border ${theme === "dark"
                     ? "bg-gray-800/50 border-gray-700"
                     : "bg-white/70 border-gray-200 shadow-lg"
-                }`}
+                  }`}
                 style={{
                   boxShadow:
                     theme === "dark"
@@ -325,9 +315,8 @@ const Contact = () => {
                 }}
               >
                 <h3
-                  className={`text-2xl text-center font-bold mb-6 ${
-                    theme === "dark" ? "text-white" : "text-gray-800"
-                  }`}
+                  className={`text-2xl text-center font-bold mb-6 ${theme === "dark" ? "text-white" : "text-gray-800"
+                    }`}
                 >
                   {text.followMe}
                 </h3>
@@ -348,11 +337,10 @@ const Contact = () => {
                         y: -5,
                         boxShadow: `0 10px 25px ${social.color}40`,
                       }}
-                      className={`social-link p-4 rounded-full transition-all duration-300 ${
-                        theme === "dark"
+                      className={`social-link p-4 rounded-full transition-all duration-300 ${theme === "dark"
                           ? "bg-gray-700 text-gray-300 hover:bg-gray-600"
                           : "bg-gray-100 text-gray-600 hover:bg-gray-200"
-                      }`}
+                        }`}
                       style={{
                         backgroundColor:
                           theme === "dark" ? undefined : social.color + "10",
@@ -373,11 +361,10 @@ const Contact = () => {
                 className="flex justify-center"
               >
                 <div
-                  className={`relative w-32 h-32 rounded-full ${
-                    theme === "dark"
+                  className={`relative w-32 h-32 rounded-full ${theme === "dark"
                       ? "bg-gradient-to-r from-cyan-400 to-purple-500"
                       : "bg-gradient-to-r from-purple-400 to-blue-500"
-                  } p-1`}
+                    } p-1`}
                   style={{
                     boxShadow:
                       theme === "dark"
@@ -386,9 +373,8 @@ const Contact = () => {
                   }}
                 >
                   <div
-                    className={`w-full h-full rounded-full ${
-                      theme === "dark" ? "bg-gray-800" : "bg-white"
-                    } flex items-center justify-center social-link cursor-pointer`}
+                    className={`w-full h-full rounded-full ${theme === "dark" ? "bg-gray-800" : "bg-white"
+                      } flex items-center justify-center social-link cursor-pointer`}
                   >
                     <motion.div
                       animate={{ rotate: 360 }}
@@ -405,9 +391,8 @@ const Contact = () => {
                       }
                     >
                       <FaEnvelope
-                        className={`text-4xl ${
-                          theme === "dark" ? "text-cyan-400" : "text-purple-600"
-                        }`}
+                        className={`text-4xl ${theme === "dark" ? "text-cyan-400" : "text-purple-600"
+                          }`}
                       />
                     </motion.div>
                   </div>

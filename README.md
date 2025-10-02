@@ -21,6 +21,7 @@ Modern ve responsive portfolio websitesi. React.js, Framer Motion ve Tailwind CS
 ## 🛠️ Teknolojiler
 
 ### Frontend
+
 - **React.js 18+** - Modern React Hooks
 - **Vite** - Hızlı build tool
 - **Tailwind CSS** - Styling
@@ -29,6 +30,7 @@ Modern ve responsive portfolio websitesi. React.js, Framer Motion ve Tailwind CS
 - **React Icons** - Icon kütüphanesi
 
 ### Blog System
+
 - **React Markdown** - Markdown to React component
 - **Remark GFM** - GitHub Flavored Markdown
 - **Rehype Highlight** - Syntax highlighting
@@ -36,6 +38,7 @@ Modern ve responsive portfolio websitesi. React.js, Framer Motion ve Tailwind CS
 - **Vite Glob Import** - Otomatik dosya import
 
 ### SEO & Performance
+
 - **Meta Tags** - Comprehensive SEO
 - **Open Graph** - Social media sharing
 - **Twitter Cards** - Twitter optimizasyonu
@@ -45,6 +48,7 @@ Modern ve responsive portfolio websitesi. React.js, Framer Motion ve Tailwind CS
 - **Web App Manifest** - PWA özellikleri
 
 ### API & External Services
+
 - **GitHub API** - Proje listesi
 - **Responsive Images** - Optimized loading
 
@@ -97,22 +101,26 @@ metehan-portfolio/
 ## 🚀 Kurulum
 
 1. **Repository'yi klonlayın:**
+
 ```bash
 git clone https://github.com/MMetehan/metehan-portfolio.git
 cd metehan-portfolio
 ```
 
 2. **Dependencies'leri yükleyin:**
+
 ```bash
 npm install
 ```
 
 3. **Development server'ı başlatın:**
+
 ```bash
 npm run dev
 ```
 
 4. **Production build:**
+
 ```bash
 npm run build
 ```
@@ -120,6 +128,7 @@ npm run build
 ## 🔧 Konfigürasyon
 
 ### Environment Variables
+
 ```env
 # .env.local dosyası oluşturun (opsiyonel)
 VITE_GITHUB_USERNAME=MMetehan
@@ -127,7 +136,9 @@ VITE_SITE_URL=https://metehan-yildirim.com
 ```
 
 ### SEO Ayarları
+
 `index.html` dosyasında aşağıdaki alanları güncelleyin:
+
 - Site URL'leri
 - Meta açıklamaları
 - Sosyal medya linkleri
@@ -136,6 +147,7 @@ VITE_SITE_URL=https://metehan-yildirim.com
 ## 📝 Otomatik Blog Sistemi
 
 ### 🎯 Özellikler
+
 - ✅ **Markdown Destekli** - `.md` dosyaları otomatik import
 - ✅ **Frontmatter Parsing** - YAML metadata desteği
 - ✅ **Otomatik Slug Generation** - Dosya adından URL oluşturma
@@ -148,6 +160,7 @@ VITE_SITE_URL=https://metehan-yildirim.com
 - ✅ **SEO Optimized** - Her post için ayrı meta tags
 
 ### 📄 Markdown Formatı
+
 ```markdown
 ---
 title: "Post Title"
@@ -168,10 +181,12 @@ readTime: 10
 ---
 
 # Markdown Content
+
 Your blog post content here...
 ```
 
 ### 🔧 Blog Konfigürasyonu
+
 Blog sistemi `src/blogs/blogConfig.js` dosyasında yapılandırılır:
 
 ```javascript
@@ -194,6 +209,7 @@ export function getTags()              // Etiketler
 ### 📱 Blog Sayfaları
 
 #### BlogList.jsx (/blog)
+
 - Tüm blog yazılarını listeler
 - Arama ve kategori filtreleme
 - Featured post highlighting
@@ -201,6 +217,7 @@ export function getTags()              // Etiketler
 - SEO optimized
 
 #### BlogDetail.jsx (/blog/:slug)
+
 - Markdown to React rendering
 - Syntax highlighting
 - Related posts
@@ -208,29 +225,35 @@ export function getTags()              // Etiketler
 - Dynamic SEO meta tags
 
 #### Home.jsx Entegrasyonu
+
 - Ana sayfada featured posts
 - Blog'a yönlendirme linkleri
 - Lightning efektli tasarım
 
 ### 🎨 Syntax Highlighting
+
 Code block'lar için özel styling:
+
 - **Dark Theme**: Atom One Dark color scheme
 - **Light Theme**: GitHub color scheme
 - **Responsive**: Mobile uyumlu
 - **Copy Button**: Eklenebilir özellik
 
 ### 🔍 SEO Optimizasyonu
+
 Her blog post için:
+
 ```javascript
 // Dynamic meta tags
 document.title = `${title} | Metehan Yıldırım Blog`;
-metaDescription.setAttribute('content', description);
-metaKeywords.setAttribute('content', tags.join(', '));
+metaDescription.setAttribute("content", description);
+metaKeywords.setAttribute("content", tags.join(", "));
 ```
 
 ## 📊 SEO Optimizasyonu
 
 ### 🎯 Temel SEO
+
 - ✅ **Meta Tags** - Title, description, keywords
 - ✅ **Open Graph** - Facebook/LinkedIn paylaşımları
 - ✅ **Twitter Cards** - Twitter paylaşımları
@@ -239,23 +262,27 @@ metaKeywords.setAttribute('content', tags.join(', '));
 - ✅ **Semantic HTML** - Proper HTML5 elements
 
 ### 🗺️ Site Mapping
+
 - ✅ **Sitemap.xml** - 5 sayfa için detaylı sitemap
 - ✅ **Robots.txt** - Search engine guidance
 - ✅ **Multilingual Support** - TR/EN hreflang tags
 
 ### ⚡ Performance
+
 - ✅ **Preconnect** - External resources
 - ✅ **DNS Prefetch** - Faster resource loading
 - ✅ **Optimized Images** - Proper alt tags
 - ✅ **Lazy Loading** - Performance optimization
 
 ### 📱 Mobile & PWA
+
 - ✅ **Web App Manifest** - PWA ready
 - ✅ **Responsive Design** - Mobile-first approach
 - ✅ **Theme Colors** - System theme support
 - ✅ **Viewport Optimization** - Mobile UX
 
 ### 🔍 Rich Snippets
+
 ```json
 {
   "@type": "Person",
@@ -275,11 +302,13 @@ metaKeywords.setAttribute('content', tags.join(', '));
 ## 🎨 Tema Sistemi
 
 ### Dark Mode
+
 - Cyan/Purple gradient renk paleti
 - Lightning efektleri
 - Glow animasyonları
 
 ### Light Mode
+
 - Purple/Blue gradient renk paleti
 - Soft shadows
 - Clean design
@@ -294,6 +323,7 @@ metaKeywords.setAttribute('content', tags.join(', '));
 ## � 404 Error Handling
 
 ### Özellikler
+
 - **SEO Optimized** - 404 sayfası noindex, nofollow
 - **User Friendly** - Kullanıcı dostu tasarım
 - **Navigation Links** - Diğer sayfalara yönlendirme
@@ -301,16 +331,18 @@ metaKeywords.setAttribute('content', tags.join(', '));
 - **Multilingual** - TR/EN dil desteği
 
 ### Teknik Detaylar
+
 ```jsx
 // SEO meta tags dynamic update
 useEffect(() => {
-  document.title = '404 - Page Not Found';
+  document.title = "404 - Page Not Found";
   // Robots meta update
-  robotsMeta.setAttribute('content', 'noindex, nofollow');
+  robotsMeta.setAttribute("content", "noindex, nofollow");
 }, []);
 ```
 
 ### Deployment Configuration
+
 - **Netlify**: `_redirects` dosyası ile SPA routing
 - **Vercel**: `vercel.json` ile rewrite rules
 - **Apache**: `.htaccess` gerekli (eklenebilir)
@@ -318,15 +350,18 @@ useEffect(() => {
 ## �🚀 Deployment
 
 ### Vercel (Önerilen)
+
 1. Vercel hesabı oluşturun
 2. GitHub repository'yi bağlayın
 3. Otomatik deploy
 
 ### Netlify
+
 1. `npm run build` ile build alın
 2. `dist` klasörünü Netlify'a yükleyin
 
 ### Manual Hosting
+
 ```bash
 npm run build
 # dist klasörünü sunucuya yükleyin
@@ -335,12 +370,14 @@ npm run build
 ## 📈 Analytics & Monitoring
 
 ### Google Analytics (Eklenebilir)
+
 ```javascript
 // Google Analytics 4 integration
-gtag('config', 'GA_MEASUREMENT_ID');
+gtag("config", "GA_MEASUREMENT_ID");
 ```
 
 ### Performance Monitoring
+
 - Lighthouse scores
 - Core Web Vitals
 - Page load times
@@ -355,9 +392,9 @@ gtag('config', 'GA_MEASUREMENT_ID');
 ## 📧 İletişim
 
 - **Email:** muhammed.metehan.yildirim@gmail.com
-- **LinkedIn:** [Muhammed Metehan Yıldırım](https://www.linkedin.com/in/muhammed-metehan-yıldırım-17687b169/)
+- **LinkedIn:** [Muhammed Metehan Yıldırım](https://www.linkedin.com/in/muhammed-metehan-yıldırım)
 - **GitHub:** [MMetehan](https://github.com/MMetehan)
-- **Instagram:** [@metehan__yildirim](https://www.instagram.com/metehan__yildirim/)
+- **Instagram:** [@metehan\_\_yildirim](https://www.instagram.com/metehan__yildirim/)
 
 ## 📝 Lisans
 
@@ -400,6 +437,7 @@ A modern and responsive portfolio website built with React.js, Framer Motion, an
 ## 🛠️ Technologies
 
 ### Frontend
+
 - **React.js 18+** - Modern React Hooks
 - **Vite** - Fast build tool
 - **Tailwind CSS** - Styling
@@ -408,6 +446,7 @@ A modern and responsive portfolio website built with React.js, Framer Motion, an
 - **React Icons** - Icon library
 
 ### Blog System
+
 - **React Markdown** - Markdown to React component
 - **Remark GFM** - GitHub Flavored Markdown
 - **Rehype Highlight** - Syntax highlighting
@@ -415,6 +454,7 @@ A modern and responsive portfolio website built with React.js, Framer Motion, an
 - **Vite Glob Import** - Automatic file import
 
 ### SEO & Performance
+
 - **Meta Tags** - Comprehensive SEO
 - **Open Graph** - Social media sharing
 - **Twitter Cards** - Twitter optimization
@@ -424,6 +464,7 @@ A modern and responsive portfolio website built with React.js, Framer Motion, an
 - **Web App Manifest** - PWA features
 
 ### API & External Services
+
 - **GitHub API** - Project list
 - **Responsive Images** - Optimized loading
 
@@ -476,22 +517,26 @@ metehan-portfolio/
 ## 🚀 Installation
 
 1. **Clone the repository:**
+
 ```bash
 git clone https://github.com/MMetehan/metehan-portfolio.git
 cd metehan-portfolio
 ```
 
 2. **Install dependencies:**
+
 ```bash
 npm install
 ```
 
 3. **Start development server:**
+
 ```bash
 npm run dev
 ```
 
 4. **Production build:**
+
 ```bash
 npm run build
 ```
@@ -499,6 +544,7 @@ npm run build
 ## 📝 Automated Blog System
 
 ### 🎯 Features
+
 - ✅ **Markdown Support** - `.md` files auto-import
 - ✅ **Frontmatter Parsing** - YAML metadata support
 - ✅ **Auto Slug Generation** - URL creation from filename
@@ -511,6 +557,7 @@ npm run build
 - ✅ **SEO Optimized** - Individual meta tags per post
 
 ### 📄 Markdown Format
+
 ```markdown
 ---
 title: "Post Title"
@@ -531,12 +578,14 @@ readTime: 10
 ---
 
 # Markdown Content
+
 Your blog post content here...
 ```
 
 ## 📊 SEO Optimization
 
 ### 🎯 Basic SEO
+
 - ✅ **Meta Tags** - Title, description, keywords
 - ✅ **Open Graph** - Facebook/LinkedIn sharing
 - ✅ **Twitter Cards** - Twitter sharing
@@ -545,18 +594,21 @@ Your blog post content here...
 - ✅ **Semantic HTML** - Proper HTML5 elements
 
 ### 🗺️ Site Mapping
+
 - ✅ **Sitemap.xml** - Detailed sitemap for all pages
 - ✅ **Robots.txt** - Search engine guidance
 - ✅ **Multilingual Support** - TR/EN hreflang tags
 - ✅ **Blog Post URLs** - Individual blog post mapping
 
 ### ⚡ Performance
+
 - ✅ **Preconnect** - External resources
 - ✅ **DNS Prefetch** - Faster resource loading
 - ✅ **Optimized Images** - Proper alt tags
 - ✅ **Lazy Loading** - Performance optimization
 
 ### 📱 Mobile & PWA
+
 - ✅ **Web App Manifest** - PWA ready with shortcuts
 - ✅ **Responsive Design** - Mobile-first approach
 - ✅ **Theme Colors** - System theme support
@@ -565,6 +617,7 @@ Your blog post content here...
 ## 🔍 SEO Checklist
 
 ### ✅ Technical SEO
+
 - [x] **Sitemap.xml** - Updated with blog posts
 - [x] **Robots.txt** - Blog pages included
 - [x] **Meta tags** - Dynamic for each page
@@ -575,6 +628,7 @@ Your blog post content here...
 - [x] **Page speed** - Optimized loading
 
 ### ✅ Content SEO
+
 - [x] **Title tags** - Unique for each page
 - [x] **Meta descriptions** - Compelling descriptions
 - [x] **Header structure** - H1-H6 hierarchy
@@ -583,6 +637,7 @@ Your blog post content here...
 - [x] **URL structure** - Clean, descriptive URLs
 
 ### ✅ Blog SEO
+
 - [x] **Individual post URLs** - `/blog/post-slug`
 - [x] **Category pages** - Organized content
 - [x] **Tag system** - Topical organization
@@ -593,9 +648,9 @@ Your blog post content here...
 ## 📧 Contact
 
 - **Email:** muhammed.metehan.yildirim@gmail.com
-- **LinkedIn:** [Muhammed Metehan Yıldırım](https://www.linkedin.com/in/muhammed-metehan-yıldırım-17687b169/)
+- **LinkedIn:** [Muhammed Metehan Yıldırım](https://www.linkedin.com/in/muhammed-metehan-yıldırım)
 - **GitHub:** [MMetehan](https://github.com/MMetehan)
-- **Instagram:** [@metehan__yildirim](https://www.instagram.com/metehan__yildirim/)
+- **Instagram:** [@metehan\_\_yildirim](https://www.instagram.com/metehan__yildirim/)
 
 ## 📝 License
 
