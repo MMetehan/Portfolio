@@ -1,89 +1,97 @@
 ---
 title: "Who Am I? – A Curious Developer’s Journey"
-titleTr: "Ben Kimim? – Meraklı Bir Geliştiricinin Yolculuğu"
 description: "The story of Muhammed Metehan Yıldırım – from Minecraft mods to professional coding life."
-descriptionTr: "Muhammed Metehan Yıldırım’ın hikayesi – Minecraft modlarından profesyonel yazılım hayatına."
 excerpt: "A tale of obsession, computers, and way too much curiosity."
-excerptTr: "Bir takıntı, bilgisayarlar ve aşırı merak dolu bir hikaye."
 date: "2025-09-08"
 category: "Personal"
-categoryTr: "Kişisel"
-tags: ["Life", "Coding", "Journey", "Curiosity"]
-tagsTr: ["Hayat", "Kodlama", "Yolculuk", "Merak"]
+tags:
+  [
+    "Life",
+    "Coding",
+    "Journey",
+    "Curiosity",
+    "Stormcloud",
+    "Lightning Bolt",
+    "Developer",
+  ]
 featured: true
 author: "Muhammed Metehan Yıldırım"
 published: true
 readTime: 8
 ---
 
-# 👋 Karşınızda Ben: Muhammed Metehan Yıldırım
+# 👋 Here I Am: Muhammed Metehan Yıldırım
 
-Merhaba! Ben **3 Şubat 2000 doğumlu**, öğrenmeye takıntılı (evet, baya takıntılı 😂) bir insanım.  
-25 yaşındayım ve 2018’den beri profesyonel olarak firmalarla çalışıyorum. Ama hikâyem **çok daha önce** başladı.
+Hello! I’m **born on February 3, 2000**, someone absolutely obsessed with learning (like... _really_ obsessed 😂).  
+I’m 25 years old and have been working professionally with companies since 2018. But my story started **way earlier**.
 
 ---
 
-## 🎮 2013-2014: Minecraft Günleri
+## 🎮 2013-2014: Minecraft Days
 
-O yıllarda arkadaşlarımla birlikte açtığımız **Faction Minecraft sunucumuz** vardı. Kendi serverimiz için özel bosslar yazmak, asansörler yapmak, hile korumalarının açıkları ile uğraşmak garip bir şekilde keyifliydi fakat asıl keyifli olan ise... Evet karşınızda [ComputerCraft](https://www.curseforge.com/minecraft/mc-mods/computercraft) belkide beni yazılım dünyasına sokan yegane moddur kendisi. Bilmeyenleriniz için hemen anlatıyorum. Oyun içinde bir bilgisayarınız var, lua kod yazmak için [notepad++](https://notepad-plus-plus.org/) 'ınız var. Oyun içinde ki bilgisayar verdiğiniz algoritmayı hayata geçiriyordu. Anlatmakla olmaz bence kesin bir videosunu izleyin derim.
+Back then, my friends and I ran our own **Faction Minecraft server**. Writing custom bosses, building elevators, and fighting anti-cheat exploits was weirdly fun.  
+But the real joy came from... yes, you guessed it: [ComputerCraft](https://www.curseforge.com/minecraft/mc-mods/computercraft) — the one and only mod that probably pulled me into programming.
+
+For those who don’t know: you have a computer _inside the game_, a Lua-based terminal, and even a [notepad++](https://notepad-plus-plus.org/) to write code. Whatever algorithm you wrote — your in-game computer actually executed it. It’s pure magic; you’ve got to see a video of it.
 
 ```js
-// 2013 Metehan'ı
+// 2013 Metehan
 let server = "Minecraft Faction Server";
 let favoriteMod = "ComputerCraft";
 while (true) {
-  console.log("Write Lua code, move blocks, repeat...");
+  console.log("Write Lua code, break blocks, move forwart, repeat...");
 }
 ```
 
-Serverimiz için boss yazmak, asansör yapmak, hile korumalarının açıklarını bulmaya çalışmak… bunlar bir eğlenceydi ama **asıl keyif** kendi dünyamda, ComputerCraft'ta kod yazmaktı.
+We built bosses, created elevators, and explored anti-cheat exploits — but **the real fun** was writing code inside my own Minecraft world.
 
 ---
 
-## 💡 2016-2017: Lucy'nin İlk Versiyonu
+## 💡 2016-2017: The First Version of Lucy
 
-Zaman su gibi akıp geçti ve ben ilk büyük projemi yapmaya karar verdim: **Lucy**.  
-(Projenin iğrenç tek sayfa kodunu “projeler” kısmında görebilirsiniz 🤣)
+Time flew, and I decided to build my first _big_ project: **Lucy**.  
+(You can still find its awful one-page source code in my projects section 🤣)
 
 ```js
 // Lucy v1.0 (2016)
 function lucy() {
-  console.log("Ben çok zekiyim 🤖 ama kodum çorba gibi...");
+  console.log("I’m super smart 🤖 but my code is spaghetti...");
 }
 lucy();
 ```
 
-Kodunun karmaşık ve tek sayfa olduğuna aldanmayın. STT kullanarak Arduino üzerinden masa lambası kapatmaya kadar ilerlemiştim...
-([bknz.](https://www.instagram.com/reel/BUDMXvhlhC9/))
+Don’t let the messy one-page code fool you — it actually worked!  
+Using STT and Arduino, I could even turn off my desk lamp with voice commands...  
+([see here](https://www.instagram.com/reel/BUDMXvhlhC9/))
 
 ---
 
-## 👨‍💻 2018: Profesyonel Hayata Adım
+## 👨‍💻 2018: Stepping Into Professional Life
 
-2018’de kendimi gösterecek fırsatı yakaladım ve bir firmada işe başladım.  
-O günden bu yana bilgisayarın başından kalkmadan, gençliğimin baharını “keyboard çılgını” olarak geçiriyorum.
+In 2018, I finally got my first job opportunity.  
+Since then, I’ve basically lived in front of the computer, spending my youth as a _keyboard maniac_.
 
 ```js
-// 2018 Metehan'ı işe başlarken
+// 2018 Metehan starting his first job
 let hired = true;
 if (hired) {
   setTimeout(() => {
-    console.log("Yes! İlk maaşımı aldım 💸");
+    console.log("Yes! Got my first paycheck 💸");
   }, 30 * 24 * 60 * 60 * 1000);
-  //gün saat dakika saniye salise
+  // days, hours, minutes, seconds, ms
 }
 ```
 
 ---
 
-## 🚀 Bugün
+## 🚀 Today
 
-Hala bıkmadım.  
-Hala her gün **yeni bir konu araştırıyor**, **yeni şeyler öğrenmeye çalışıyorum**.  
-Kısacası, karşınızda **her şeye meraklı, öğrenmeye takıntılı bir deli** duruyor. 😅
+Still not tired.  
+Still exploring **new topics every day**, still trying to **learn something new**.  
+In short, you’re looking at a **curious, learning-obsessed madman**. 😅
 
 ```js
-// 2025 Metehan'ı
+// 2025 Metehan
 while (true) {
   learnSomethingNew();
   drinkCoffee();
@@ -92,8 +100,8 @@ while (true) {
 
 ---
 
-## ✨ Sonuç
+## ✨ Conclusion
 
-Biraz dünyaya kendimi tanıtmanın vakti geldi, hatta geçiyor bile.  
-Ve işte buradayım: Muhammed Metehan Yıldırım.  
-Sonsuz meraklı, bilgisayar manyağı ve araştırma bağımlısı.
+It’s about time I introduce myself to the world — maybe a bit late, but better now than never.  
+So here I am: **Muhammed Metehan Yıldırım**.  
+Endlessly curious, a computer maniac, and hopelessly addicted to learning.
