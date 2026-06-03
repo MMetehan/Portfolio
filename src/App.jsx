@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, lazy, Suspense } from "react";
 import {
   BrowserRouter as Router,
   Routes,
@@ -21,26 +21,34 @@ import About from "./pages/About";
 import Skills from "./pages/Skills";
 import Projects from "./pages/Projects";
 import Contact from "./pages/Contact";
-import BlogList from "./pages/BlogList";
-import BlogDetail from "./pages/BlogDetail";
+const BlogList = lazy(() => import("./pages/BlogList"));
+const BlogDetail = lazy(() => import("./pages/BlogDetail"));
 import NotFound from "./pages/NotFound";
 
 // Global Lightning Effects Component
+const LIGHTNING_POSITIONS = [
+  { top: "10%", left: "5%", delay: 0 },
+  { top: "20%", right: "10%", delay: 1.5 },
+  { bottom: "30%", left: "15%", delay: 3 },
+  { top: "60%", right: "8%", delay: 4.5 },
+  { bottom: "15%", right: "20%", delay: 6 },
+];
+
+const SPARKS = Array.from({ length: 8 }, (_, i) => ({
+  id: i,
+  left: `${Math.random() * 100}%`,
+  top: `${Math.random() * 100}%`,
+  delay: Math.random() * 3,
+  enterDelay: Math.random() * 2,
+  duration: 3 + Math.random() * 2,
+}));
+
 const GlobalLightningEffects = () => {
   const { theme } = useTheme();
 
-  const lightningPositions = [
-    { top: "10%", left: "5%", delay: 0 },
-    { top: "20%", right: "10%", delay: 1.5 },
-    { bottom: "30%", left: "15%", delay: 3 },
-    { top: "60%", right: "8%", delay: 4.5 },
-    { bottom: "15%", right: "20%", delay: 6 },
-  ];
-
   return (
     <div className="fixed inset-0 pointer-events-none z-0">
-      {/* Background Lightning Bolts */}
-      {lightningPositions.map((pos, index) => (
+      {LIGHTNING_POSITIONS.map((pos, index) => (
         <motion.div
           key={index}
           className={`absolute text-cyan-400/20 ${
@@ -61,21 +69,20 @@ const GlobalLightningEffects = () => {
         </motion.div>
       ))}
 
-      {/* Floating Sparks */}
-      {[...Array(8)].map((_, index) => (
+      {SPARKS.map((spark) => (
         <motion.div
-          key={`spark-${index}`}
+          key={`spark-${spark.id}`}
           className={`absolute text-cyan-400/10 ${
             theme === "dark" ? "opacity-100" : "opacity-20"
           }`}
           style={{
-            left: `${Math.random() * 100}%`,
-            top: `${Math.random() * 100}%`,
-            "--delay": `${Math.random() * 3}s`,
+            left: spark.left,
+            top: spark.top,
+            "--delay": `${spark.delay}s`,
           }}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: Math.random() * 2 }}
+          transition={{ delay: spark.enterDelay }}
         >
           <motion.div
             animate={{
@@ -84,7 +91,7 @@ const GlobalLightningEffects = () => {
               scale: [1, 1.2, 1],
             }}
             transition={{
-              duration: 3 + Math.random() * 2,
+              duration: spark.duration,
               repeat: Infinity,
               ease: "easeInOut",
             }}
@@ -350,8 +357,8 @@ function AppContent() {
           <Route path="/about" element={<About />} />
           <Route path="/skills" element={<Skills />} />
           <Route path="/projects" element={<Projects />} />
-          <Route path="/blog" element={<BlogList />} />
-          <Route path="/blog/:slug" element={<BlogDetail />} />
+          <Route path="/blog" element={<Suspense fallback={<div className="min-h-screen flex items-center justify-center"><div className="text-cyan-400 text-lg animate-pulse">Loading...</div></div>}><BlogList /></Suspense>} />
+          <Route path="/blog/:slug" element={<Suspense fallback={<div className="min-h-screen flex items-center justify-center"><div className="text-cyan-400 text-lg animate-pulse">Loading...</div></div>}><BlogDetail /></Suspense>} />
           <Route path="/contact" element={<Contact />} />
           <Route path="*" element={<NotFound />} />
         </Routes>

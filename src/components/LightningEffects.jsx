@@ -15,18 +15,18 @@ export const LightningBolt = ({ delay = 0, className = "" }) => {
     );
 };
 
-export const FloatingSparks = () => {
-    const sparks = Array.from({ length: 12 }, (_, i) => ({
-        id: i,
-        size: Math.random() * 8 + 4,
-        delay: Math.random() * 2,
-        left: Math.random() * 100,
-        top: Math.random() * 100,
-    }));
+const FLOATING_SPARKS = Array.from({ length: 12 }, (_, i) => ({
+    id: i,
+    size: Math.random() * 8 + 4,
+    delay: Math.random() * 2,
+    left: Math.random() * 100,
+    top: Math.random() * 100,
+}));
 
+export const FloatingSparks = () => {
     return (
         <div className="fixed inset-0 pointer-events-none overflow-hidden">
-            {sparks.map((spark) => (
+            {FLOATING_SPARKS.map((spark) => (
                 <motion.div
                     key={spark.id}
                     className="absolute"

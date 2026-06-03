@@ -71,9 +71,23 @@ const Projects = () => {
     return icons[language] || { icon: FaCode, color: "#666666" };
   };
   useEffect(() => {
+    const CACHE_KEY = "github_repos_cache";
+    const CACHE_TTL = 5 * 60 * 1000; // 5 minutes
+
     const fetchProjects = async () => {
       try {
         setLoading(true);
+
+        const cached = sessionStorage.getItem(CACHE_KEY);
+        if (cached) {
+          const { data, timestamp } = JSON.parse(cached);
+          if (Date.now() - timestamp < CACHE_TTL) {
+            setProjects(data);
+            setLoading(false);
+            return;
+          }
+        }
+
         const response = await fetch(
           "https://api.github.com/users/MMetehan/repos"
         );
@@ -82,11 +96,12 @@ const Projects = () => {
           throw new Error("GitHub API request failed");
         }
 
-        const data = await response.json();
-        const filteredProjects = data
+        const raw = await response.json();
+        const filteredProjects = raw
           .filter((repo) => !repo.fork && !repo.archived)
           .sort((a, b) => new Date(b.updated_at) - new Date(a.updated_at));
 
+        sessionStorage.setItem(CACHE_KEY, JSON.stringify({ data: filteredProjects, timestamp: Date.now() }));
         setProjects(filteredProjects);
       } catch (err) {
         setError(err.message);
@@ -312,8 +327,8 @@ const Projects = () => {
                             theme === "dark"
                               ? "0 0 30px rgba(0, 255, 255, 0.1)"
                               : "none",
-                          backdropFilter: "blur(20px)",
-                          WebkitBackdropFilter: "blur(20px)",
+                          backdropFilter: "blur(10px)",
+                          WebkitBackdropFilter: "blur(10px)",
                         }}
                       >
                         <div className="flex items-start justify-between mb-6">
@@ -500,8 +515,8 @@ const Projects = () => {
                             theme === "dark"
                               ? "0 0 20px rgba(0, 255, 255, 0.05)"
                               : "none",
-                          backdropFilter: "blur(20px)",
-                          WebkitBackdropFilter: "blur(20px)",
+                          backdropFilter: "blur(10px)",
+                          WebkitBackdropFilter: "blur(10px)",
                         }}
                       >
                         <div className="flex items-start gap-3 mb-4">

@@ -128,8 +128,8 @@ const BlogList = () => {
               : "bg-white/70 border-gray-200 shadow-lg hover:border-purple-400/50"
           }`}
           style={{
-            backdropFilter: "blur(20px)",
-            WebkitBackdropFilter: "blur(20px)",
+            backdropFilter: "blur(10px)",
+            WebkitBackdropFilter: "blur(10px)",
           }}
         >
           {/* Category Badge */}

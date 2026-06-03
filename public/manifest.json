@@ -1,88 +1,82 @@
 {
-    "name": "Muhammed Metehan Yıldırım - Portfolio & Blog",
-    "short_name": "Metehan Portfolio",
-    "description": "Frontend Developer Portfolio & Blog - React.js, Ionic, JavaScript specialist. Tech blog posts and projects.",
-    "start_url": "/",
-    "display": "standalone",
-    "background_color": "#000000",
-    "theme_color": "#00ffff",
-    "orientation": "portrait-primary",
-    "icons": [
+  "name": "Muhammed Metehan Yıldırım - Portfolio & Blog",
+  "short_name": "Metehan Portfolio",
+  "description": "Frontend Developer Portfolio & Blog - React.js, Ionic, JavaScript specialist. Tech blog posts and projects.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#00ffff",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/my.jpeg",
+      "sizes": "512x512",
+      "type": "image/jpeg",
+      "purpose": "any"
+    },
+    {
+      "src": "/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "categories": ["portfolio", "developer", "technology", "blog", "education"],
+  "lang": "en",
+  "scope": "/",
+  "id": "metehan-portfolio",
+  "shortcuts": [
+    {
+      "name": "Blog",
+      "short_name": "Blog",
+      "description": "Tech blog posts",
+      "url": "/blog",
+      "icons": [
         {
-            "src": "/icon.svg",
-            "sizes": "any",
-            "type": "image/svg+xml",
-            "purpose": "any maskable"
-        },
-        {
-            "src": "/my.jpeg",
-            "sizes": "512x512",
-            "type": "image/jpeg",
-            "purpose": "any"
-        },
-        {
-            "src": "/android-chrome-192x192.png",
-            "sizes": "192x192",
-            "type": "image/png"
-        },
-        {
-            "src": "/android-chrome-512x512.png",
-            "sizes": "512x512",
-            "type": "image/png"
+          "src": "/icon.svg",
+          "sizes": "96x96"
         }
-    ],
-    "categories": [
-        "portfolio",
-        "developer",
-        "technology",
-        "blog",
-        "education"
-    ],
-    "lang": "en",
-    "scope": "/",
-    "id": "metehan-portfolio",
-    "shortcuts": [
+      ]
+    },
+    {
+      "name": "Projects",
+      "short_name": "Projects",
+      "description": "Portfolio projects",
+      "url": "/projects",
+      "icons": [
         {
-            "name": "Blog",
-            "short_name": "Blog",
-            "description": "Tech blog posts",
-            "url": "/blog",
-            "icons": [
-                {
-                    "src": "/icon.svg",
-                    "sizes": "96x96"
-                }
-            ]
-        },
-        {
-            "name": "Projects",
-            "short_name": "Projects",
-            "description": "Portfolio projects",
-            "url": "/projects",
-            "icons": [
-                {
-                    "src": "/icon.svg",
-                    "sizes": "96x96"
-                }
-            ]
-        },
-        {
-            "name": "Contact",
-            "short_name": "Contact",
-            "description": "Contact information",
-            "url": "/contact",
-            "icons": [
-                {
-                    "src": "/icon.svg",
-                    "sizes": "96x96"
-                }
-            ]
+          "src": "/icon.svg",
+          "sizes": "96x96"
         }
-    ],
-    "related_applications": [
+      ]
+    },
+    {
+      "name": "Contact",
+      "short_name": "Contact",
+      "description": "Contact information",
+      "url": "/contact",
+      "icons": [
         {
-            "platform": "web",
-            "url": "https://metehan-yildirim.com/blog"
+          "src": "/icon.svg",
+          "sizes": "96x96"
         }
-    ]
+      ]
+    }
+  ],
+  "related_applications": [
+    {
+      "platform": "web",
+      "url": "https://metehan-yildirim.com/blog"
+    }
+  ]
 }

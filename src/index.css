@@ -85,25 +85,30 @@
 }
 
 .lightning-flash {
-  animation: lightning-flash 3s infinite random;
+  animation: lightning-flash 3s infinite;
+  will-change: opacity, transform, filter;
 }
 
 .lightning-bolt {
   animation: lightning-bolt 4s infinite;
   animation-delay: var(--delay, 0s);
+  will-change: opacity, transform, filter;
 }
 
 .electric-pulse {
   animation: electric-pulse 2s ease-in-out infinite;
+  will-change: filter;
 }
 
 .lightning-text {
   animation: lightning-text 4s infinite;
+  will-change: text-shadow;
 }
 
 .spark-float {
   animation: spark-float 2s ease-in-out infinite;
   animation-delay: var(--delay, 0s);
+  will-change: transform, opacity;
 }
 
 @keyframes paddingTopPulse {

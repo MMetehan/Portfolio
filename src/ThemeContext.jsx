@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState, useEffect } from "react";
+import React, { createContext, useContext, useState } from "react";
 
 const ThemeContext = createContext();
 
@@ -11,31 +11,17 @@ export const useTheme = () => {
 };
 
 export const ThemeProvider = ({ children }) => {
-  const [theme, setTheme] = useState("dark");
-  const [language, setLanguage] = useState("tr");
+  const [language, setLanguage] = useState(() => localStorage.getItem("language") || "en");
 
-  useEffect(() => {
-    // Theme always dark, only language from localStorage
-    const savedLanguage = localStorage.getItem("language") || "en";
-    setLanguage(savedLanguage);
-
-    // Ensure theme is always dark
-    setTheme("dark");
-    localStorage.setItem("theme", "dark");
-  }, []);
-
-  // Remove theme toggle functionality
   const toggleLanguage = () => {
-    const newLanguage = "en";
-    setLanguage(newLanguage);
-    localStorage.setItem("language", newLanguage);
+    setLanguage("en");
+    localStorage.setItem("language", "en");
   };
 
   const value = {
-    theme, // Always 'dark'
+    theme: "dark",
     language,
     toggleLanguage,
-    // toggleTheme removed
   };
 
   return (

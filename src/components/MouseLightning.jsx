@@ -1,35 +1,68 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { useTheme } from '../ThemeContext';
 
+const ELEMENT_SELECTOR = 'button, .my-self-image, .social-link, .skill-item, .theme-toggle, .language-toggle, .interactive-title, h2, h3, .card, [role="button"]';
+
 const MouseLightning = () => {
     const { theme } = useTheme();
     const canvasRef = useRef(null);
     const animationRef = useRef(null);
     const mouseRef = useRef({ x: 0, y: 0 });
-    const [isVisible, setIsVisible] = useState(true);
+    const lastTouchRef = useRef(0);
+    const isVisibleRef = useRef(false);
+    const elementsRef = useRef([]);
+    const frameCountRef = useRef(0);
+    const [isVisible, setIsVisible] = useState(false);
 
     useEffect(() => {
         const canvas = canvasRef.current;
         if (!canvas) return;
 
         const ctx = canvas.getContext('2d');
-        let time = 0;
 
         const resizeCanvas = () => {
             canvas.width = window.innerWidth;
             canvas.height = window.innerHeight;
+            // Refresh element cache on resize
+            elementsRef.current = [...document.querySelectorAll(ELEMENT_SELECTOR)];
         };
 
         resizeCanvas();
         window.addEventListener('resize', resizeCanvas);
 
+        const setVisible = (val) => {
+            if (isVisibleRef.current === val) return;
+            isVisibleRef.current = val;
+            setIsVisible(val);
+        };
+
         const handleMouseMove = (e) => {
+            // Ignore synthetic mouse events fired by mobile browsers after touch
+            if (Date.now() - lastTouchRef.current < 500) return;
             mouseRef.current = { x: e.clientX, y: e.clientY };
-            setIsVisible(true);
+            setVisible(true);
         };
 
         const handleMouseLeave = () => {
-            setIsVisible(false);
+            setVisible(false);
+        };
+
+        const handleTouchStart = (e) => {
+            lastTouchRef.current = Date.now();
+            const touch = e.touches[0];
+            mouseRef.current = { x: touch.clientX, y: touch.clientY };
+            setVisible(true);
+        };
+
+        const handleTouchMove = (e) => {
+            lastTouchRef.current = Date.now();
+            const touch = e.touches[0];
+            mouseRef.current = { x: touch.clientX, y: touch.clientY };
+        };
+
+        const handleTouchEnd = () => {
+            lastTouchRef.current = Date.now();
+            setVisible(false);
         };
 
         const createRealisticLightning = (startX, startY, endX, endY, intensity = 1) => {
@@ -81,16 +114,20 @@ const MouseLightning = () => {
             return points;
         };
 
-        const drawLightningLayer = (ctx, points, opacity, lineWidth, color) => {
+        // shadow param: only main bolt gets glow, branches/particles skip it (expensive)
+        const drawLightningLayer = (ctx, points, opacity, lineWidth, color, shadow = false) => {
             if (points.length < 2) return;
 
             ctx.globalAlpha = opacity;
             ctx.lineWidth = lineWidth;
             ctx.strokeStyle = color;
-            ctx.shadowBlur = lineWidth * 2;
-            ctx.shadowColor = color;
             ctx.lineCap = 'round';
             ctx.lineJoin = 'round';
+
+            if (shadow) {
+                ctx.shadowBlur = lineWidth * 2;
+                ctx.shadowColor = color;
+            }
 
             ctx.beginPath();
             ctx.moveTo(points[0].x, points[0].y);
@@ -100,7 +137,10 @@ const MouseLightning = () => {
             }
 
             ctx.stroke();
-            ctx.shadowBlur = 0;
+
+            if (shadow) {
+                ctx.shadowBlur = 0;
+            }
         };
 
         const drawLightningParticles = (ctx, x, y, color) => {
@@ -115,76 +155,70 @@ const MouseLightning = () => {
 
                 ctx.fillStyle = color;
                 ctx.globalAlpha = 0.6 + Math.random() * 0.4;
-                ctx.shadowBlur = 8;
-                ctx.shadowColor = color;
 
                 ctx.beginPath();
                 ctx.arc(px, py, size, 0, Math.PI * 2);
                 ctx.fill();
-
-                ctx.shadowBlur = 0;
             }
         };
 
         // Animation loop
         const animate = () => {
-            time += 0.016;
-            const { x: mouseX, y: mouseY } = mouseRef.current;
+            animationRef.current = requestAnimationFrame(animate);
             ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-            if (isVisible) {
-                const interactiveElements = document.querySelectorAll('button, .my-self-image, .social-link, .skill-item, .theme-toggle, .language-toggle, .interactive-title, h2, h3, .card, [role="button"]');
+            if (!isVisibleRef.current) return;
 
-                interactiveElements.forEach((element) => {
-                    const rect = element.getBoundingClientRect();
-                    const centerX = rect.left + rect.width / 2;
-                    const centerY = rect.top + rect.height / 2;
-                    const distance = Math.sqrt(Math.pow(centerX - mouseX, 2) + Math.pow(centerY - mouseY, 2));
-                    const isHovered = element.matches(':hover');
+            time += 0.016;
+            const { x: mouseX, y: mouseY } = mouseRef.current;
 
-                    if (distance < 300 && !isHovered) {
-                        const opacity = Math.max(0.3, 1 - distance / 300);
-                        const intensity = distance < 150 ? 1.5 : distance < 250 ? 1 : 0.7;
-                        const lightningPath = createRealisticLightning(mouseX, mouseY, centerX, centerY, intensity);
-
-                        drawLightningLayer(ctx, lightningPath, opacity * 0.3, 8, theme === 'dark' ? '#00ffff30' : '#6366f130');
-                        drawLightningLayer(ctx, lightningPath, opacity * 0.6, 4, theme === 'dark' ? '#00ffff80' : '#6366f180');
-                        drawLightningLayer(ctx, lightningPath, opacity, 2, theme === 'dark' ? '#ffffff' : '#ffffff');
-
-                        if (Math.random() < 0.3 && distance < 200) {
-                            const branchPoint = Math.floor(lightningPath.length * (0.3 + Math.random() * 0.4));
-                            if (lightningPath[branchPoint]) {
-                                const branchPath = createLightningBranch(lightningPath[branchPoint], centerX, centerY, intensity * 0.6);
-                                drawLightningLayer(ctx, branchPath, opacity * 0.7, 2, theme === 'dark' ? '#00ffff80' : '#6366f180');
-                            }
-                        }
-
-                        if (Math.random() < 0.4) {
-                            drawLightningParticles(ctx, centerX, centerY, theme === 'dark' ? '#00ffff' : '#6366f1');
-                        }
-                    }
-                });
-
-                const glowSize = 8 + Math.sin(time * 3) * 2;
-                ctx.shadowBlur = 20;
-                ctx.shadowColor = theme === 'dark' ? '#00ffff' : '#6366f1';
-                ctx.fillStyle = theme === 'dark' ? '#00ffff' : '#6366f1';
-                ctx.globalAlpha = 0;
-
-                ctx.beginPath();
-                ctx.arc(mouseX, mouseY, glowSize, 0, Math.PI * 2);
-                ctx.fill();
-
-                ctx.shadowBlur = 0;
-                ctx.globalAlpha = 1;
+            // Refresh element cache every 60 frames (~1 second) instead of every frame
+            frameCountRef.current++;
+            if (frameCountRef.current % 60 === 0 || elementsRef.current.length === 0) {
+                elementsRef.current = [...document.querySelectorAll(ELEMENT_SELECTOR)];
             }
 
-            animationRef.current = requestAnimationFrame(animate);
+            elementsRef.current.forEach((element) => {
+                const rect = element.getBoundingClientRect();
+                const centerX = rect.left + rect.width / 2;
+                const centerY = rect.top + rect.height / 2;
+                const distance = Math.sqrt(Math.pow(centerX - mouseX, 2) + Math.pow(centerY - mouseY, 2));
+                const isHovered = element.matches(':hover');
+
+                if (distance < 300 && !isHovered) {
+                    const opacity = Math.max(0.3, 1 - distance / 300);
+                    const intensity = distance < 150 ? 1.5 : distance < 250 ? 1 : 0.7;
+                    const lightningPath = createRealisticLightning(mouseX, mouseY, centerX, centerY, intensity);
+
+                    // Only the brightest (core) bolt layer gets shadow — glow effect
+                    drawLightningLayer(ctx, lightningPath, opacity * 0.3, 8, theme === 'dark' ? '#00ffff30' : '#6366f130');
+                    drawLightningLayer(ctx, lightningPath, opacity * 0.6, 4, theme === 'dark' ? '#00ffff80' : '#6366f180');
+                    drawLightningLayer(ctx, lightningPath, opacity, 2, theme === 'dark' ? '#ffffff' : '#ffffff', true);
+
+                    if (Math.random() < 0.3 && distance < 200) {
+                        const branchPoint = Math.floor(lightningPath.length * (0.3 + Math.random() * 0.4));
+                        if (lightningPath[branchPoint]) {
+                            const branchPath = createLightningBranch(lightningPath[branchPoint], centerX, centerY, intensity * 0.6);
+                            drawLightningLayer(ctx, branchPath, opacity * 0.7, 2, theme === 'dark' ? '#00ffff80' : '#6366f180');
+                        }
+                    }
+
+                    if (Math.random() < 0.4) {
+                        drawLightningParticles(ctx, centerX, centerY, theme === 'dark' ? '#00ffff' : '#6366f1');
+                    }
+                }
+            });
+
+            ctx.globalAlpha = 1;
         };
         animate();
 
         document.addEventListener('mousemove', handleMouseMove);
         document.addEventListener('mouseleave', handleMouseLeave);
+        document.addEventListener('touchstart', handleTouchStart, { passive: true });
+        document.addEventListener('touchmove', handleTouchMove, { passive: true });
+        document.addEventListener('touchend', handleTouchEnd);
+        document.addEventListener('touchcancel', handleTouchEnd);
 
         return () => {
             if (animationRef.current) {
@@ -193,6 +227,10 @@ const MouseLightning = () => {
             window.removeEventListener('resize', resizeCanvas);
             document.removeEventListener('mousemove', handleMouseMove);
             document.removeEventListener('mouseleave', handleMouseLeave);
+            document.removeEventListener('touchstart', handleTouchStart);
+            document.removeEventListener('touchmove', handleTouchMove);
+            document.removeEventListener('touchend', handleTouchEnd);
+            document.removeEventListener('touchcancel', handleTouchEnd);
         };
     }, [theme]);
 

@@ -1,6 +1,6 @@
 .nav-blur {
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 }
 
 .neon-cyan {
@@ -36,6 +36,7 @@
 .project-card {
   transition: all 0.3s ease;
   transform-style: preserve-3d;
+  will-change: transform;
 }
 
 .project-card:hover {

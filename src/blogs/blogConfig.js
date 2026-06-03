@@ -223,17 +223,6 @@ const allPosts = Object.entries(postModules)
   .filter((post) => post.published)
   .sort((a, b) => new Date(b.date) - new Date(a.date));
 
-console.table(
-  allPosts.map((post) => ({
-    slug: post.slug,
-    title: post.title,
-    category: post.category,
-    date: post.date,
-    featured: post.featured,
-    readTime: post.readTime + " min",
-  }))
-);
-
 // Export functions
 export function getBlogPosts() {
   return allPosts;

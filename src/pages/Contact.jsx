@@ -310,8 +310,8 @@ const Contact = () => {
                     theme === "dark"
                       ? "0 0 30px rgba(0, 255, 255, 0.1)"
                       : "none",
-                  backdropFilter: "blur(20px)",
-                  WebkitBackdropFilter: "blur(20px)",
+                  backdropFilter: "blur(10px)",
+                  WebkitBackdropFilter: "blur(10px)",
                 }}
               >
                 <h3

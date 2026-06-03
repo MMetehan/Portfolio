@@ -187,8 +187,8 @@ const About = () => {
                     theme === "dark"
                       ? "0 0 30px rgba(0, 255, 255, 0.1)"
                       : "none",
-                  backdropFilter: "blur(20px)",
-                  WebkitBackdropFilter: "blur(20px)",
+                  backdropFilter: "blur(10px)",
+                  WebkitBackdropFilter: "blur(10px)",
                 }}
               >
                 <p
@@ -211,8 +211,8 @@ const About = () => {
                     theme === "dark"
                       ? "0 0 30px rgba(147, 51, 234, 0.1)"
                       : "none",
-                  backdropFilter: "blur(20px)",
-                  WebkitBackdropFilter: "blur(20px)",
+                  backdropFilter: "blur(10px)",
+                  WebkitBackdropFilter: "blur(10px)",
                 }}
               >
                 <p
@@ -322,8 +322,8 @@ const About = () => {
                     : "bg-white/70 border-gray-200 shadow-lg"
                 }`}
                 style={{
-                  backdropFilter: "blur(20px)",
-                  WebkitBackdropFilter: "blur(20px)",
+                  backdropFilter: "blur(10px)",
+                  WebkitBackdropFilter: "blur(10px)",
                 }}
               >
                 <div className="flex items-start space-x-4">

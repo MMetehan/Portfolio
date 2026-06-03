@@ -221,8 +221,8 @@ const Skills = () => {
                     theme === "dark"
                       ? "0 0 30px rgba(0, 255, 255, 0.1)"
                       : "none",
-                  backdropFilter: "blur(20px)",
-                  WebkitBackdropFilter: "blur(20px)",
+                  backdropFilter: "blur(10px)",
+                  WebkitBackdropFilter: "blur(10px)",
                 }}
               >
                 <div className="flex items-center mb-6">
@@ -325,8 +325,8 @@ const Skills = () => {
                       theme === "dark"
                         ? "0 0 30px rgba(0, 255, 255, 0.1)"
                         : "none",
-                    backdropFilter: "blur(20px)",
-                    WebkitBackdropFilter: "blur(20px)",
+                    backdropFilter: "blur(10px)",
+                    WebkitBackdropFilter: "blur(10px)",
                   }}
                 >
                   <motion.div
