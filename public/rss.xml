@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Muhammed Metehan Yıldırım - Blog</title>
+    <link>https://metehan-yildirim.com/blog</link>
+    <description>Tech blog about frontend development, React, JavaScript and open source.</description>
+    <language>en</language>
+    <atom:link href="https://metehan-yildirim.com/rss.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>StorMIC Setup Guide: Free Self-Hosted P2P Voice Chat With Zero Data Retention</title>
+      <link>https://metehan-yildirim.com/blog/stormic-self-hosted-voice-chat-setup</link>
+      <guid>https://metehan-yildirim.com/blog/stormic-self-hosted-voice-chat-setup</guid>
+      <pubDate>Fri, 17 Jul 2026 00:00:00 GMT</pubDate>
+      <description>How to deploy the StorMIC signaling server for free on Render.com, download the desktop app, and connect it to your own server. A privacy-first Discord alternative that stores nothing.</description>
+    </item>
+    <item>
+      <title>A Deep Dive into Shadcn UI: Detailed Examples, Code Snippets, and Playgrounds</title>
+      <link>https://metehan-yildirim.com/blog/shadcn-ui-full-guide</link>
+      <guid>https://metehan-yildirim.com/blog/shadcn-ui-full-guide</guid>
+      <pubDate>Tue, 16 Sep 2025 00:00:00 GMT</pubDate>
+      <description></description>
+    </item>
+    <item>
+      <title>Why Choose Native Languages Over Ionic / React Native?</title>
+      <link>https://metehan-yildirim.com/blog/native-vs-crossplatform</link>
+      <guid>https://metehan-yildirim.com/blog/native-vs-crossplatform</guid>
+      <pubDate>Mon, 15 Sep 2025 00:00:00 GMT</pubDate>
+      <description>Ionic and React Native are great — they speed up prototyping and let you share a single codebase. But when it comes to performance, hardware integration, security, and long-term maintenance, native languages (Kotlin/Java, Swift/Objective-C) still have strong advantages. This post walks through the technical and practical reasons to prefer native development in many real-world projects.</description>
+    </item>
+    <item>
+      <title>Who Am I? – A Curious Developer’s Journey</title>
+      <link>https://metehan-yildirim.com/blog/a-curious-developers-journey</link>
+      <guid>https://metehan-yildirim.com/blog/a-curious-developers-journey</guid>
+      <pubDate>Mon, 08 Sep 2025 00:00:00 GMT</pubDate>
+      <description>The story of Muhammed Metehan Yıldırım – from Minecraft mods to professional coding life.</description>
+    </item>
+    <item>
+      <title>React Hooks: Kapsamlı Rehber</title>
+      <link>https://metehan-yildirim.com/blog/react-hooks</link>
+      <guid>https://metehan-yildirim.com/blog/react-hooks</guid>
+      <pubDate>Wed, 15 Jan 2025 00:00:00 GMT</pubDate>
+      <description></description>
+    </item>
+    <item>
+      <title>JavaScript Performans İpuçları</title>
+      <link>https://metehan-yildirim.com/blog/javascript-performance-tips</link>
+      <guid>https://metehan-yildirim.com/blog/javascript-performance-tips</guid>
+      <pubDate>Fri, 10 Jan 2025 00:00:00 GMT</pubDate>
+      <description></description>
+    </item>
+    <item>
+      <title>Web Güvenliği Temelleri</title>
+      <link>https://metehan-yildirim.com/blog/web-security-tips</link>
+      <guid>https://metehan-yildirim.com/blog/web-security-tips</guid>
+      <pubDate>Sun, 05 Jan 2025 00:00:00 GMT</pubDate>
+      <description></description>
+    </item>
+    <item>
+      <title>Next.js 14 App Router Complete Guide</title>
+      <link>https://metehan-yildirim.com/blog/nextjs-14-app-router-guide</link>
+      <guid>https://metehan-yildirim.com/blog/nextjs-14-app-router-guide</guid>
+      <pubDate>Sun, 22 Dec 2024 00:00:00 GMT</pubDate>
+      <description>Master the new App Router in Next.js 14 with practical examples</description>
+    </item>
+    <item>
+      <title>Modern React State Management 2024</title>
+      <link>https://metehan-yildirim.com/blog/react-state-management-2024</link>
+      <guid>https://metehan-yildirim.com/blog/react-state-management-2024</guid>
+      <pubDate>Sat, 21 Dec 2024 00:00:00 GMT</pubDate>
+      <description>Complete guide to React state management: useState, useReducer, Context API, Zustand, and Redux Toolkit</description>
+    </item>
+    <item>
+      <title>CSS Grid ve Flexbox Mastery</title>
+      <link>https://metehan-yildirim.com/blog/css-grid-flexbox-mastery</link>
+      <guid>https://metehan-yildirim.com/blog/css-grid-flexbox-mastery</guid>
+      <pubDate>Fri, 20 Dec 2024 00:00:00 GMT</pubDate>
+      <description>Master modern CSS layout techniques with Grid and Flexbox</description>
+    </item>
+    <item>
+      <title>TypeScript Best Practices for React</title>
+      <link>https://metehan-yildirim.com/blog/typescript-react-best-practices</link>
+      <guid>https://metehan-yildirim.com/blog/typescript-react-best-practices</guid>
+      <pubDate>Wed, 18 Dec 2024 00:00:00 GMT</pubDate>
+      <description>Learn how to write better React applications with TypeScript</description>
+    </item>
+  </channel>
+</rss>

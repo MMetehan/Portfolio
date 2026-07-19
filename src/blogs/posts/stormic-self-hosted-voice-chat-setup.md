@@ -55,9 +55,12 @@ featured: true
 author: "Muhammed Metehan Yıldırım"
 published: true
 readTime: 12
+image: "/blog-images/stormic/stormic-logo.jpeg"
 ---
 
 # StorMIC Setup Guide: Free Self-Hosted P2P Voice Chat With Zero Data Retention
+
+![StorMIC app icon](/blog-images/stormic/stormic-logo.jpeg)
 
 > This guide walks a regular user through two things: putting the StorMIC signaling server online for free, and pointing the StorMIC desktop app at it. You do not need to be a backend developer. If you can copy a URL and paste it into a text box, you can finish this in under ten minutes.
 >
@@ -91,6 +94,8 @@ StorMIC is a desktop voice and chat application built with Electron. It does voi
 Underneath, it works in a fundamentally different way. Your audio, your video, your messages, and your files never touch a server. They travel directly from your computer to the other person's computer over WebRTC. The only server in the picture is a tiny WebSocket relay whose entire job is to introduce two people to each other, and then get out of the way.
 
 That relay is called the signaling server, and it is the part you are going to host yourself. It is the reason this guide exists.
+
+![A StorMIC voice channel with two participants and text chat side by side](/blog-images/stormic/stormic-inside.jpeg)
 
 ---
 
@@ -225,6 +230,8 @@ This is the step that ties the two halves together, and it is a single text fiel
 
 Launch StorMIC. Because no server URL is baked into the public builds, the app starts without a default and expects you to supply one. Open the **Settings** panel using the gear icon, find **Signaling Server URL**, and paste in your `wss://` address:
 
+![The Settings panel, showing the Signaling Server URL field](/blog-images/stormic/ayarlar.jpeg)
+
 ```
 wss://stormic-server-abc1.onrender.com
 ```
@@ -246,6 +253,8 @@ Downloaded releases land on option 4 and you move them to option 1. That is the 
 
 ## 9. Step 5: Create a channel and invite someone
 
+![StorMIC's channel screen — create a new channel or join one with a code](/blog-images/stormic/kanal-alani.jpeg)
+
 1. Enter a username, which is remembered for next time
 2. Create a channel with a code of your choosing, which is any string you and your friends agree on
 3. Have your friend enter the same server URL, the same channel code, and a different username
@@ -254,6 +263,10 @@ Downloaded releases land on option 4 and you move them to option 1. That is the 
 From that moment on, your server is a bystander. Push to talk, screen share, drag a file into the chat window, and none of it goes anywhere near Render.
 
 The channel exists only while somebody is in it. Close the app on both ends and the channel is gone from memory, with nothing left behind to delete.
+
+> **Tip:** Typing `@` in the chat box brings up the participant list so you can mention someone directly.
+>
+> ![Typing @ in chat brings up the participant list to mention someone directly](/blog-images/stormic/etiket-sistemi.jpeg)
 
 ---
 

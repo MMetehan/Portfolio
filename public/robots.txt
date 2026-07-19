@@ -3,50 +3,6 @@
 
 User-agent: *
 Allow: /
-
-# Important pages to crawl
-Allow: /blog
-Allow: /blog/*
-Allow: /about
-Allow: /skills
-Allow: /projects
-Allow: /contact
-
-# Sitemaps
-Sitemap: https://metehan-yildirim.com/sitemap.xml
-
-# Disallow crawling of unnecessary files
-Disallow: /node_modules/
-Disallow: /build/static/css/*.map
-Disallow: /build/static/js/*.map
 Disallow: /404
-Disallow: /*404*
 
-# Allow important assets
-Allow: /static/media/
-Allow: /manifest.json
-Allow: /favicon.ico
-Allow: /icon.svg
-Allow: /my.jpeg
-Allow: /muhammed-metehan-yildirim-TR.pdf
-
-# Blog specific allows
-Allow: /blog/react-hooks
-Allow: /blog/javascript-performance-tips
-Allow: /blog/nextjs-14-app-router-guide
-Allow: /blog/react-state-management-2024
-Allow: /blog/typescript-react-best-practices
-Allow: /blog/css-grid-flexbox-mastery
-Allow: /blog/web-security-tips
-
-# Crawl delay (optional)
-Crawl-delay: 1
-
-# User-agent specific rules
-User-agent: GoogleBot
-Allow: /
-Crawl-delay: 0
-
-User-agent: BingBot
-Allow: /
-Crawl-delay: 1
+Sitemap: https://metehan-yildirim.com/sitemap.xml

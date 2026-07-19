@@ -331,15 +331,21 @@ const Navigation = () => {
 };
 
 function AppContent() {
-  const [loading, setLoading] = useState(true);
+  // Show the full intro only on the first visit of the session; crawlers and
+  // returning visitors get content almost immediately (LCP / Core Web Vitals).
+  const [loading, setLoading] = useState(
+    () => !sessionStorage.getItem("introShown")
+  );
 
   useEffect(() => {
+    if (!loading) return;
     const timer = setTimeout(() => {
+      sessionStorage.setItem("introShown", "1");
       setLoading(false);
-    }, 4000);
+    }, 1500);
 
     return () => clearTimeout(timer);
-  }, []);
+  }, [loading]);
 
   if (loading) {
     return <LoadingScreen />;

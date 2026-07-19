@@ -23,7 +23,7 @@ const BlogDetail = () => {
   const { slug } = useParams();
   const navigate = useNavigate();
   const location = useLocation();
-  const { theme } = useTheme();
+  const { theme, language } = useTheme();
   const [post, setPost] = useState(null);
   const [relatedPosts, setRelatedPosts] = useState([]);
   const [isBookmarked, setIsBookmarked] = useState(false);
@@ -128,10 +128,55 @@ const BlogDetail = () => {
           property="og:url"
           content={`https://metehan-yildirim.com/blog/${slug}`}
         />
+        <meta
+          property="og:image"
+          content={`https://metehan-yildirim.com${post?.image || "/my.jpeg"}`}
+        />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+          name="twitter:title"
+          content={`${post?.title || "Blog Post"} - Muhammed Metehan Yıldırım`}
+        />
+        <meta
+          name="twitter:description"
+          content={post?.excerpt || "Blog post about software development"}
+        />
+        <meta
+          name="twitter:image"
+          content={`https://metehan-yildirim.com${post?.image || "/my.jpeg"}`}
+        />
         <link
           rel="canonical"
           href={`https://metehan-yildirim.com/blog/${slug}`}
         />
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BlogPosting",
+            headline: post?.title,
+            description: post?.description || post?.excerpt,
+            datePublished: post?.date,
+            dateModified: post?.date,
+            inLanguage: language === "tr" ? "tr" : "en",
+            keywords: post?.tags?.join(", "),
+            url: `https://metehan-yildirim.com/blog/${slug}`,
+            mainEntityOfPage: {
+              "@type": "WebPage",
+              "@id": `https://metehan-yildirim.com/blog/${slug}`,
+            },
+            image: `https://metehan-yildirim.com${post?.image || "/my.jpeg"}`,
+            author: {
+              "@type": "Person",
+              name: "Muhammed Metehan Yıldırım",
+              url: "https://metehan-yildirim.com",
+            },
+            publisher: {
+              "@type": "Person",
+              name: "Muhammed Metehan Yıldırım",
+              url: "https://metehan-yildirim.com",
+            },
+          })}
+        </script>
       </Helmet>
       <div
         className={`min-h-screen ${
