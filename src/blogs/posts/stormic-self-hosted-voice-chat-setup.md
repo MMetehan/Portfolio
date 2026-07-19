@@ -253,7 +253,7 @@ Downloaded releases land on option 4 and you move them to option 1. That is the 
 
 ## 9. Step 5: Create a channel and invite someone
 
-![StorMIC's channel screen — create a new channel or join one with a code](/blog-images/stormic/kanal-alani.jpeg)
+![StorMIC's channel screen for creating or joining a channel](/blog-images/stormic/kanal-alani.jpeg)
 
 1. Enter a username, which is remembered for next time
 2. Create a channel with a code of your choosing, which is any string you and your friends agree on

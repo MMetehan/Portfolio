@@ -25,7 +25,7 @@
       <link>https://metehan-yildirim.com/blog/native-vs-crossplatform</link>
       <guid>https://metehan-yildirim.com/blog/native-vs-crossplatform</guid>
       <pubDate>Mon, 15 Sep 2025 00:00:00 GMT</pubDate>
-      <description>Ionic and React Native are great — they speed up prototyping and let you share a single codebase. But when it comes to performance, hardware integration, security, and long-term maintenance, native languages (Kotlin/Java, Swift/Objective-C) still have strong advantages. This post walks through the technical and practical reasons to prefer native development in many real-world projects.</description>
+      <description>Ionic and React Native are great: they speed up prototyping and let you share a single codebase. But when it comes to performance, hardware integration, security, and long-term maintenance, native languages (Kotlin/Java, Swift/Objective-C) still have strong advantages. This post walks through the technical and practical reasons to prefer native development in many real-world projects.</description>
     </item>
     <item>
       <title>Who Am I? – A Curious Developer’s Journey</title>

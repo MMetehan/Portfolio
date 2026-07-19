@@ -67,14 +67,14 @@ featured: true
 
 ## 1. What is Shadcn UI?
 
-Shadcn UI is a component library built on **React + Tailwind CSS**. The big idea behind it is giving developers fully editable source components (not opaque compiled packages) so you have complete ownership. It's highly composable and intentionally minimal in terms of opinionated styles — Tailwind is the styling layer and the UI package gives you accessible primitives and well-structured components.
+Shadcn UI is a component library built on **React + Tailwind CSS**. The big idea behind it is giving developers fully editable source components (not opaque compiled packages) so you have complete ownership. It's highly composable and intentionally minimal in terms of opinionated styles: Tailwind is the styling layer and the UI package gives you accessible primitives and well-structured components.
 
 ---
 
 ## 2. Why pick Shadcn UI?
 
-- **Ownership**: Components are source files in your repo — change anything.
-- **Tiny surface area**: No giant runtime — you add only what you need.
+- **Ownership**: Components live in your repo as editable source files, so you can change anything.
+- **Tiny surface area**: No giant runtime; you add only what you need.
 - **Tailwind-friendly**: Use utility classes and design tokens as you like.
 - **Accessible**: Components aim to follow accessibility patterns.
 - **Playful learning curve**: Good docs and examples (including official playground).
@@ -855,7 +855,7 @@ export function ProductCard({ product }) {
 
 ## 16. Common pitfalls & how to avoid them
 
-- **Over-adding utilities**: Tailwind classes can get verbose — create small component wrappers when repeated.
+- **Over-adding utilities**: Tailwind classes can get verbose, so create small component wrappers when repeated.
 - **Global state misuse**: Don't store UI-only ephemeral state in global stores.
 - **Accessibility oversights**: Test keyboard interactions, labels, modal focus-trapping.
 - **Not optimizing images**: Large images kill LCP; optimize and lazy load.
@@ -892,4 +892,4 @@ Next steps suggestions:
 
 ---
 
-_Happy building — now go try adding a component to a small project and see how quickly you can iterate!_
+_Happy building! Now go try adding a component to a small project and see how quickly you can iterate!_
