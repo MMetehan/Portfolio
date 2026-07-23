@@ -15,6 +15,7 @@ import {
   FaCalendarAlt,
   FaClock,
   FaWikipediaW,
+  FaHeart,
 } from "react-icons/fa";
 import { LightningBolt, FloatingSparks } from "../components/LightningEffects";
 import { useNavigate, Link } from "react-router-dom";
@@ -269,6 +270,11 @@ const Home = () => {
                     icon: FaWikipediaW,
                     url: "https://www.wikidata.org/wiki/Q136186660",
                     name: "Wikidata",
+                  },
+                  {
+                    icon: FaHeart,
+                    url: "https://github.com/sponsors/MMetehan",
+                    name: "GitHub Sponsors",
                   },
                 ].map((item, index) => (
                   <motion.a

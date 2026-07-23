@@ -13,6 +13,7 @@ import {
   FaPaperPlane,
   FaInstagram,
   FaBolt,
+  FaHeart,
 } from "react-icons/fa";
 
 const LightningBolt = ({ delay = 0, className = "" }) => {
@@ -145,6 +146,12 @@ const Contact = () => {
       name: "Instagram",
       url: "https://www.instagram.com/metehan__yildirim/",
       color: "#C13584",
+    },
+    {
+      icon: FaHeart,
+      name: "GitHub Sponsors",
+      url: "https://github.com/sponsors/MMetehan",
+      color: "#EA4AAA",
     },
   ];
 
