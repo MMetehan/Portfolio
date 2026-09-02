@@ -20,6 +20,7 @@ import {
 import { LightningBolt, FloatingSparks } from "../components/LightningEffects";
 import { useNavigate, Link } from "react-router-dom";
 import { getFeaturedPosts } from "../blogs/blogConfig";
+import { getFeaturedWorks } from "../data/works";
 
 const Home = () => {
   const { theme, language } = useTheme();
@@ -28,6 +29,9 @@ const Home = () => {
   const [firstLanding, setFirstLanding] = React.useState(true);
   const [featuredPosts] = React.useState(
     getFeaturedPosts(language).slice(0, 2)
+  );
+  const [featuredWorks] = React.useState(
+    getFeaturedWorks(language).slice(0, 3)
   );
 
   const text = {
@@ -41,6 +45,10 @@ const Home = () => {
     contact: "Contact",
     latestFromBlog: "Latest from Blog",
     viewAllPosts: "View All Posts",
+    selectedWork: "Selected Work",
+    selectedWorkSubtitle: "A few products I have designed and built end to end.",
+    viewAllWork: "View All Work",
+    viewWork: "View Work",
     readMore: "Read More",
     readTime: "min read",
   };
@@ -350,6 +358,166 @@ const Home = () => {
             </motion.div>
           </div>
         </div>
+
+        {/* Selected Work Section */}
+        {featuredWorks.length > 0 && (
+          <section
+            className={`py-20 px-4 relative ${theme === "dark"
+              ? "bg-gradient-to-br from-gray-900 via-purple-900 to-black"
+              : "bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50"
+              }`}
+          >
+            <FloatingSparks />
+            <LightningBolt delay={0} className="top-10 left-10" />
+            <LightningBolt delay={2} className="bottom-20 right-20" />
+
+            <div className="max-w-7xl mx-auto relative z-10">
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8 }}
+                className="text-center mb-16"
+              >
+                <motion.h2
+                  className={`text-4xl md:text-5xl font-bold mb-4 lightning-text ${theme === "dark"
+                    ? "text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400"
+                    : "text-transparent bg-clip-text bg-gradient-to-r from-purple-600 via-blue-600 to-indigo-600"
+                    }`}
+                  style={{
+                    textShadow:
+                      theme === "dark"
+                        ? "0 0 30px rgba(0, 255, 255, 0.3)"
+                        : "none",
+                  }}
+                >
+                  <span className="inline-flex items-center gap-4">
+                    <FaBolt className="text-yellow-400 lightning-flash" />
+                    {text.selectedWork}
+                    <FaBolt className="text-yellow-400 lightning-flash" />
+                  </span>
+                </motion.h2>
+                <p
+                  className={`text-lg ${theme === "dark" ? "text-gray-300" : "text-gray-600"
+                    }`}
+                >
+                  {text.selectedWorkSubtitle}
+                </p>
+              </motion.div>
+
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+                {featuredWorks.map((work, index) => (
+                  <motion.article
+                    key={work.id}
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: index * 0.2, duration: 0.8 }}
+                    whileHover={{ scale: 1.03 }}
+                    className="group"
+                  >
+                    <Link
+                      to="/work"
+                      className={`flex flex-col h-full rounded-xl border overflow-hidden transition-all duration-300 ${theme === "dark"
+                        ? "bg-gray-800/50 border-gray-700 hover:border-cyan-500/50"
+                        : "bg-white/70 border-gray-200 shadow-lg hover:border-purple-400/50"
+                        }`}
+                      style={{
+                        backdropFilter: "blur(10px)",
+                        WebkitBackdropFilter: "blur(10px)",
+                      }}
+                    >
+                      {work.cover && (
+                        <img
+                          src={work.cover}
+                          alt={work.coverAlt}
+                          loading="lazy"
+                          decoding="async"
+                          width="800"
+                          height="450"
+                          className="w-full aspect-[16/9] object-cover"
+                        />
+                      )}
+                      <div className="p-6 flex flex-col flex-1">
+                        {work.category && (
+                          <span
+                            className={`self-start px-3 py-1 rounded-full text-xs font-medium mb-3 ${theme === "dark"
+                              ? "bg-cyan-500/20 text-cyan-400"
+                              : "bg-purple-500/20 text-purple-600"
+                              }`}
+                          >
+                            {work.category}
+                          </span>
+                        )}
+                        <h3
+                          className={`text-xl font-bold mb-2 transition-colors ${theme === "dark"
+                            ? "text-white group-hover:text-cyan-400"
+                            : "text-gray-800 group-hover:text-purple-600"
+                            }`}
+                        >
+                          {work.title}
+                        </h3>
+                        {[work.role, work.client, work.year]
+                          .filter(Boolean)
+                          .join(" · ") && (
+                          <p
+                            className={`text-sm mb-3 ${theme === "dark" ? "text-gray-400" : "text-gray-500"
+                              }`}
+                          >
+                            {[work.role, work.client, work.year]
+                              .filter(Boolean)
+                              .join(" · ")}
+                          </p>
+                        )}
+                        {work.summary && (
+                          <p
+                            className={`text-sm leading-relaxed mb-4 line-clamp-3 ${theme === "dark" ? "text-gray-300" : "text-gray-600"
+                              }`}
+                          >
+                            {work.summary}
+                          </p>
+                        )}
+                        <span
+                          className={`inline-flex items-center gap-2 mt-auto text-sm font-medium ${theme === "dark" ? "text-cyan-400" : "text-purple-600"
+                            }`}
+                        >
+                          {text.viewWork}
+                          <FaArrowRight className="lightning-flash" />
+                        </span>
+                      </div>
+                    </Link>
+                  </motion.article>
+                ))}
+              </div>
+
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.4, duration: 0.8 }}
+                className="text-center"
+              >
+                <Link
+                  to="/work"
+                  className={`inline-flex items-center gap-3 px-8 py-4 rounded-full font-medium transition-all duration-300 hover:scale-105 ${theme === "dark"
+                    ? "bg-gradient-to-r from-cyan-500 to-purple-600 text-white hover:from-cyan-400 hover:to-purple-500"
+                    : "bg-gradient-to-r from-purple-600 to-blue-600 text-white hover:from-purple-500 hover:to-blue-500"
+                    }`}
+                  style={{
+                    boxShadow:
+                      theme === "dark"
+                        ? "0 0 30px rgba(0, 255, 255, 0.3)"
+                        : "0 10px 30px rgba(0, 0, 0, 0.2)",
+                  }}
+                >
+                  <FaBolt />
+                  {text.viewAllWork}
+                  <FaArrowRight className="lightning-flash" />
+                </Link>
+              </motion.div>
+            </div>
+          </section>
+        )}
 
         {/* Blog Section */}
         {featuredPosts.length > 0 && (

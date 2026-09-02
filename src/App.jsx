@@ -20,6 +20,7 @@ import Home from "./pages/Home";
 import About from "./pages/About";
 import Skills from "./pages/Skills";
 import Projects from "./pages/Projects";
+import Work from "./pages/Work";
 import Contact from "./pages/Contact";
 const BlogList = lazy(() => import("./pages/BlogList"));
 const BlogDetail = lazy(() => import("./pages/BlogDetail"));
@@ -117,6 +118,7 @@ const Navigation = () => {
     { path: "/about", label: "About" },
     { path: "/skills", label: "Skills" },
     { path: "/projects", label: "Projects" },
+    { path: "/work", label: "Work" },
     { path: "/blog", label: "Blog" },
     { path: "/contact", label: "Contact" },
   ];
@@ -363,6 +365,7 @@ function AppContent() {
           <Route path="/about" element={<About />} />
           <Route path="/skills" element={<Skills />} />
           <Route path="/projects" element={<Projects />} />
+          <Route path="/work" element={<Work />} />
           <Route path="/blog" element={<Suspense fallback={<div className="min-h-screen flex items-center justify-center"><div className="text-cyan-400 text-lg animate-pulse">Loading...</div></div>}><BlogList /></Suspense>} />
           <Route path="/blog/:slug" element={<Suspense fallback={<div className="min-h-screen flex items-center justify-center"><div className="text-cyan-400 text-lg animate-pulse">Loading...</div></div>}><BlogDetail /></Suspense>} />
           <Route path="/contact" element={<Contact />} />
